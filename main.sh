@@ -19,7 +19,7 @@ yay -S --noconfirm ttf-jetbrains-mono ttf-jetbrains-mono-nerd terminus-font-ttf
 
 echo '[*] installing icons and themes...'
 sudo mv /usr/share/themes /usr/share/bck.themes && sudo cp -r usr_share/themes /usr/share/
-sudo mv /usr/share/icons /usr/share/bck.icons && sudo mkdir icons && sudo cp -r usr_share/icons/Papirus-Dark /usr/share/icons/
+sudo mv /usr/share/icons /usr/share/bck.icons && sudo mkdir icons && sudo cp -r usr_share/icons/Papirus-Dark /usr/share/icons/Papirus-Dark
 
 sudo cp 00-keyboard.conf /etc/X11/xorg.conf.d/
 sudo cp etc/X11_xinit/xinitrc /etc/X11/xinit/

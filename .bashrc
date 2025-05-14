@@ -11,6 +11,7 @@ nc="$(tput sgr0)"
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+export PATH="$PATH:/home/user0o1/.local/share/gem/ruby/3.4.0/bin"
 #alias startx='startx --'
 PS1="\[$dark_red\][ \[$light_grey\]\u@**** \[$light_grey\]\w\[$light_grey\] \[$dark_red\]]\\[$light_grey\]$ \[$nc\]"
 
@@ -54,7 +55,7 @@ alias crack='cd ~/tools/cracking'
 eval "$(direnv hook bash)"
 # Created by `pipx` on 2025-01-08 19:43:03
 #export PATH="$PATH:/home/user0o1/.local/bin:/home/user0o1/.local/share/gem/ruby/3.3.0/bin:/home/user0o1/go/bin"
-export PATH="$PATH:/home/user0o1/.cargo/bin:/home/user0o1/.local/bin:/home/user0o1/go/bin"
+#export PATH="$PATH:/home/user0o1/.cargo/bin:/home/user0o1/.local/bin:/home/user0o1/go/bin:/home/user0o1/.local/share/gem/ruby/3.4.0/bin"
 
 #### PROXY SETTINGS ####
 
