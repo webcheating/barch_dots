@@ -9,7 +9,7 @@ WINIT_X11_SCALE_FACTOR = "1.0"
 
 ## WINDOW ---------------------------------------------------------
 [window]
-position = "None"
+position = { x = 245, y = 100 }
 dynamic_padding = true
 decorations = "full"
 opacity = 1.0
@@ -21,13 +21,13 @@ decorations_theme_variant = "None"
 
 ## Number of lines/columns (not pixels) in the terminal.
 [window.dimensions]
-columns = 130
-lines = 35
+columns = 155
+lines = 43
 
 ## Blank space added around the window in pixels.
 [window.padding]
-x = 20
-y = 20
+x = 14
+y = 14
 
 ## SCROLLING ------------------------------------------------------
 [scrolling]

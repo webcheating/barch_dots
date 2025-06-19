@@ -12,18 +12,19 @@ git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd .. &&
 
 echo '[*] installing packages...'
 #yay -Syuv obmenu-generator lxappearance-obconf mousepad feh xorg-xinput flameshot tint2 thunar
-yay -Syuv --noconfirm obmenu-generator lxappearance-gtk3 mousepad feh xorg-xinput flameshot tint2 thunar nvim direnv
+yay -S --noconfirm obmenu-generator lxappearance-gtk3 mousepad feh xorg-xinput flameshot tint2 thunar nvim direnv
 
 echo '[*] installing fonts...'
 yay -S --noconfirm ttf-jetbrains-mono ttf-jetbrains-mono-nerd terminus-font-ttf
 
 echo '[*] installing icons and themes...'
 sudo mv /usr/share/themes /usr/share/bck.themes && sudo cp -r usr_share/themes /usr/share/
-sudo mv /usr/share/icons /usr/share/bck.icons && sudo mkdir icons && sudo cp -r usr_share/icons/Papirus-Dark /usr/share/icons/Papirus-Dark
+sudo mv /usr/share/icons /usr/share/bck.icons && sudo mkdir -p /usr/share/icons/Papirus-Dark && sudo cp -r usr_share/icons/Papirus-Dark/* /usr/share/icons/Papirus-Dark/
 
 sudo cp 00-keyboard.conf /etc/X11/xorg.conf.d/
-sudo cp etc/X11_xinit/xinitrc /etc/X11/xinit/
-sudo cp etc/xprofile /etc/
+## TODO: add new .xinitrc xprofile and .xserverrc
+#sudo cp etc/X11_xinit/xinitrc /etc/X11/xinit/
+#sudo cp etc/xprofile /etc/
 
 cp .Xresources ~/
 cp .bashrc ~/

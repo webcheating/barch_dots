@@ -59,5 +59,5 @@ for file in "/etc/profile" "$HOME/.profile" "/etc/xprofile" "$HOME/.xprofile"; d
     fi
 done
 
-
+nvidia-settings --load-config-only &
 exec openbox-session
