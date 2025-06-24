@@ -13,7 +13,7 @@
 #fi
 
 ### blackarch related ###
-#feh --bg-scale /home/user0o1/Pictures/blackarch-artwork/wallpaper/wallpaper-fog.jpg &
+# feh --bg-scale /home/user0o1/Pictures/blackarch-artwork/wallpaper/wallpaper-fog.jpg &
 feh --bg-scale /usr/share/wallpapers/blackarch-artwork/wallpaper-fog.jpg &
 
 #tint2 &

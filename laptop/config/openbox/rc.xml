@@ -62,7 +62,7 @@
   <animateIconify>no</animateIconify>
   <font place="ActiveWindow">
     <name>Terminus (TTF)</name>
-    <size>13</size>
+    <size>11</size>
     <!-- font size in points -->
     <weight>normal</weight>
     <!-- 'bold' or 'normal' -->
@@ -71,7 +71,7 @@
   </font>
   <font place="InactiveWindow">
     <name>Terminus (TTF)</name>
-    <size>13</size>
+    <size>11</size>
     <!-- font size in points -->
     <weight>normal</weight>
     <!-- 'bold' or 'normal' -->
@@ -79,8 +79,9 @@
     <!-- 'italic' or 'normal' -->
   </font>
   <font place="MenuHeader">
-    <name>Terminus (TTF)</name>
-    <size>13</size>
+    <!--<name>Terminus (TTF)</name>-->
+    <name>JetBrainsMono Nerd Font</name>
+    <size>10</size>
     <!-- font size in points -->
     <weight>normal</weight>
     <!-- 'bold' or 'normal' -->
@@ -88,8 +89,9 @@
     <!-- 'italic' or 'normal' -->
   </font>
   <font place="MenuItem">
-    <name>Terminus (TTF)</name>
-    <size>13</size>
+    <!--<name>Terminus (TTF)</name>-->
+    <name>JetBrainsMono Nerd Font</name>
+    <size>10</size>
     <!-- font size in points -->
     <weight>normal</weight>
     <!-- 'bold' or 'normal' -->
@@ -98,7 +100,7 @@
   </font>
   <font place="ActiveOnScreenDisplay">
     <name>Terminus (TTF)</name>
-    <size>13</size>
+    <size>11</size>
     <!-- font size in points -->
     <weight>normal</weight>
     <!-- 'bold' or 'normal' -->

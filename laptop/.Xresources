@@ -1,5 +1,7 @@
 !! Colorscheme
 
+Xft.dpi: 110
+
 ! special
 *.foreground: #93a1a1
 *.background: #1b1b1b

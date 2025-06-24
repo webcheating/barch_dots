@@ -11,7 +11,11 @@ nc="$(tput sgr0)"
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-export PATH="$PATH:/home/user0o1/.local/share/gem/ruby/3.4.0/bin"
+[[ ":$PATH:" != *":$HOME/go/bin:"* ]] && export PATH="$PATH:$HOME/go/bin"
+[[ ":$PATH:" != *":$HOME/.local/bin:"* ]] && export PATH="$PATH:$HOME/.local/bin"
+[[ ":$PATH:" != *":$HOME/.local/share/gem/ruby/3.4.0/bin:"* ]] && export PATH="$PATH:$HOME/.local/share/gem/ruby/3.4.0/bin"
+#export PATH="$PATH:/home/user0o1/go/bin"
+#export PATH="$PATH:/home/user0o1/.local/share/gem/ruby/3.4.0/bin"
 #alias startx='startx --'
 PS1="\[$dark_red\][ \[$light_grey\]\u@**** \[$light_grey\]\w\[$light_grey\] \[$dark_red\]]\\[$light_grey\]$ \[$nc\]"
 
@@ -31,6 +35,7 @@ use() {
   fi
 }
 
+alias cb='xclip -selection clipboard -i $@'
 alias vim=nvim
 alias vi=vim
 alias svim='sudo nvim'
@@ -39,15 +44,18 @@ alias ls='ls --color=auto'
 alias sl='ls'
 alias grep='grep --color=auto'
 
+alias charge='upower -i $(upower -e | grep BAT)'
 alias fix='stty raw -echo;fg'
 alias work='cd ~/hack/web && ls'
 alias htb='cd ~/hack/htb && ls'
 alias thm='cd ~/hack/thm && ls'
-alias ad='cd ~/tools/active_directory'
+alias ad='cd ~/tools/ad'
 alias lin='cd ~/tools/lin'
 alias web='cd ~/tools/web'
 alias crack='cd ~/tools/cracking'
 
+
+alias sens='xinput --set-prop 15 "libinput Accel Profile Enabled" 1, 0 && xinput --set-prop 15 "libinput Accel Speed" -0.5 && xinput --set-prop 15 "Coordinate Transformation Matrix" 0.4 0 0 0 0.4 0 0 0 1'
 #PS1='[\u@\h \W]\$ '
 #PS1="\[$blue\][ \[$cyan\]\H \[$darkgrey\]\w\[$darkgrey\] \[$blue\]]\\[$darkgrey\]$ \[$nc\]"
 #PS1="root@jane:~# "
@@ -57,14 +65,21 @@ eval "$(direnv hook bash)"
 #export PATH="$PATH:/home/user0o1/.local/bin:/home/user0o1/.local/share/gem/ruby/3.3.0/bin:/home/user0o1/go/bin"
 #export PATH="$PATH:/home/user0o1/.cargo/bin:/home/user0o1/.local/bin:/home/user0o1/go/bin:/home/user0o1/.local/share/gem/ruby/3.4.0/bin"
 
+
+
 #### PROXY SETTINGS ####
 
-#export ALL_PROXY="socks5h://<login>:<pass>@<ip>:<port>"
-#export http_proxy="socks5h://<login>:<pass>@<ip>:<port>"
-#export https_proxy="socks5h://<login>:<pass>@<ip>:<port>"
-#export ftp_proxy="socks5h://<login>:<pass>@<ip>:<port>"
+#export https_proxy="http://qbFpDT:Hw5jA8@147.45.92.9:8000"
+#export http_proxy="http://qbFpDT:Hw5jA8@147.45.92.9:8000"
 
-#export ALL_PROXY="http://<login>:<pass>@<ip>:<port>"
-#export http_proxy="http://<login>:<pass>@<ip>:<port>"
-#export https_proxy="http://<login>:<pass>@<ip>:<port>"
-#export ftp_proxy="http://<login>:<pass>@<ip>:<port>"
+#export http_proxy="socks5h://JCu4VK7S:FEQheq6h@212.193.168.98:63165"
+#export https_proxy="socks5h://JCu4VK7S:FEQheq6h@212.193.168.98:63165"
+#export ftp_proxy="socks5h://JCu4VK7S:FEQheq6h@212.193.168.98:63165"
+
+#export ALL_PROXY="http://JCu4VK7S:FEQheq6h@212.193.168.98:63164"
+#export http_proxy="http://JCu4VK7S:FEQheq6h@212.193.168.98:63164"
+#export https_proxy="http://JCu4VK7S:FEQheq6h@212.193.168.98:63164"
+#export ftp_proxy="http://JCu4VK7S:FEQheq6h@212.193.168.98:63164"
+
+# Created by `pipx` on 2025-05-14 17:14:31
+#export PATH="$PATH:/home/user0o1/.local/bin"

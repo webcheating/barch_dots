@@ -49,7 +49,7 @@
 		</action>
 	</item>
 	<separator/>
-	<item label="Browser">
+	<item label="Brave">
 		<action name="Execute">
 			<command>brave</command>
 		</action>
