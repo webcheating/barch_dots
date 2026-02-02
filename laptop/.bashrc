@@ -43,6 +43,7 @@ use() {
   fi
 }
 
+alias flameshot='QT_ENABLE_HIGHDPI_SCALING=0 flameshot'
 alias cb='xclip -selection clipboard -i $@'
 alias vim=nvim
 alias vi=vim
@@ -52,6 +53,7 @@ alias ls='ls --color=auto'
 alias sl='ls'
 alias grep='grep --color=auto'
 
+alias charge='upower -i $(upower -e | grep BAT)'
 alias fix='stty raw -echo;fg'
 alias work='cd ~/hack/web && ls'
 alias htb='cd ~/hack/htb && ls'

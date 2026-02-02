@@ -10,6 +10,8 @@ then
   /usr/bin/VBoxClient --vmsvga
 fi
 
+export QT_QPA_PLATFORMTHEME=qt6ct
+
 exec tint2 &
 
 # wallpaper
