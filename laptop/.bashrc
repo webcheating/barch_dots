@@ -68,25 +68,3 @@ alias sens='xinput --set-prop 15 "libinput Accel Profile Enabled" 1, 0 && xinput
 #PS1="root@jane:~# "
 
 eval "$(direnv hook bash)"
-# Created by `pipx` on 2025-01-08 19:43:03
-#export PATH="$PATH:/home/user0o1/.local/bin:/home/user0o1/.local/share/gem/ruby/3.3.0/bin:/home/user0o1/go/bin"
-#export PATH="$PATH:/home/user0o1/.cargo/bin:/home/user0o1/.local/bin:/home/user0o1/go/bin:/home/user0o1/.local/share/gem/ruby/3.4.0/bin"
-
-
-
-#### PROXY SETTINGS ####
-
-#export https_proxy="http://qbFpDT:Hw5jA8@147.45.92.9:8000"
-#export http_proxy="http://qbFpDT:Hw5jA8@147.45.92.9:8000"
-
-#export http_proxy="socks5h://JCu4VK7S:FEQheq6h@212.193.168.98:63165"
-#export https_proxy="socks5h://JCu4VK7S:FEQheq6h@212.193.168.98:63165"
-#export ftp_proxy="socks5h://JCu4VK7S:FEQheq6h@212.193.168.98:63165"
-
-#export ALL_PROXY="http://JCu4VK7S:FEQheq6h@212.193.168.98:63164"
-#export http_proxy="http://JCu4VK7S:FEQheq6h@212.193.168.98:63164"
-#export https_proxy="http://JCu4VK7S:FEQheq6h@212.193.168.98:63164"
-#export ftp_proxy="http://JCu4VK7S:FEQheq6h@212.193.168.98:63164"
-
-# Created by `pipx` on 2025-05-14 17:14:31
-#export PATH="$PATH:/home/user0o1/.local/bin"
