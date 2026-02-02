@@ -16,7 +16,7 @@ warning() { echo -e "${YELLOW}⚠ $1${NC}"; }
 
 printf "[*] installing dotfiles...\n\n"
 
-sudo pacman -Syu --needed base-devel git
+sudo pacman -Syu --needed base-devel git rsync
 
 if ! command -v yay &> /dev/null && ! command -v paru &> /dev/null; then
     echo "[*] installing aur"
@@ -60,7 +60,7 @@ sudo mv /usr/share/icons /usr/share/bck.icons && sudo mkdir /usr/share/icons && 
 
 
 echo '[*] setting up .config'
-if [ -d ".config" ]; then
+if [ -d "config" ]; then
     rsync -av --exclude='*.tmp' config/ ~/.config/
     success "[+] .config copied"
 fi
