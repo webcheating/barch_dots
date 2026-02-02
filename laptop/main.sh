@@ -80,4 +80,6 @@ sudo cp -r config/nvim /root/.config/
 echo '[*] setting up wallpapers...'
 sudo mkdir -p /usr/share/wallpapers/blackarch-artwork && sudo cp wallpapers/wallpaper-fog.jpg /usr/share/wallpapers/blackarch-artwork/
 
-printf "\n\n[*] all done. don't forget to manualy configure lxappearance ^_^"
+echo '=========================================================================='
+printf "\n\n[*] all done. don't forget to manualy configure lxappearance ^_^\n"
+echo '=========================================================================='
