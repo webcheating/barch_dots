@@ -6,6 +6,7 @@ light_grey="$(tput bold; tput setaf 7)" # red 160 # grey-white 7 # white 15
 white="$(tput bold; tput setaf 15)"
 dark_red="$(tput bold; tput setaf 160)"
 nc="$(tput sgr0)"
+green="$(tput bold; tput setaf 2)"
 
 
 # If not running interactively, don't do anything
@@ -17,7 +18,14 @@ nc="$(tput sgr0)"
 #export PATH="$PATH:/home/user0o1/go/bin"
 #export PATH="$PATH:/home/user0o1/.local/share/gem/ruby/3.4.0/bin"
 #alias startx='startx --'
-PS1="\[$dark_red\][ \[$light_grey\]\u@**** \[$light_grey\]\w\[$light_grey\] \[$dark_red\]]\\[$light_grey\]$ \[$nc\]"
+
+if [[ -n "$SSH_CONNECTION" ]]; then
+    PS1='\[\e[$green\]\u:\w\$ \[\e[0m\]'
+else
+    PS1="\[$dark_red\][ \[$light_grey\]\u@**** \[$light_grey\]\w\[$light_grey\] \[$dark_red\]]\\[$light_grey\]$ \[$nc\]"
+fi
+
+#PS1="\[$dark_red\][ \[$light_grey\]\u@**** \[$light_grey\]\w\[$light_grey\] \[$dark_red\]]\\[$light_grey\]$ \[$nc\]"
 
 use() {
   if [ -n "$1" ]; then
@@ -44,7 +52,6 @@ alias ls='ls --color=auto'
 alias sl='ls'
 alias grep='grep --color=auto'
 
-alias charge='upower -i $(upower -e | grep BAT)'
 alias fix='stty raw -echo;fg'
 alias work='cd ~/hack/web && ls'
 alias htb='cd ~/hack/htb && ls'

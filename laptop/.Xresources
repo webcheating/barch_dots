@@ -1,7 +1,10 @@
-!! Colorscheme
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.hintstyle: hintslight
 
-!Xft.dpi: 110
-Xft.dpi: 115
+!! Colorscheme
 
 ! special
 *.foreground: #93a1a1
