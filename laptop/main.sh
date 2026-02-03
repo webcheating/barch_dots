@@ -16,7 +16,7 @@ warning() { echo -e "${YELLOW}[!] $1${NC}"; }
 
 printf "[*] installing dotfiles...\n\n"
 
-sudo pacman -Syu --needed base-devel git
+sudo pacman -Syu --needed --noconfirm base-devel git
 
 if ! command -v yay &> /dev/null && ! command -v paru &> /dev/null; then
     echo "[*] installing aur"
