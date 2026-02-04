@@ -10,3 +10,4 @@
 (include "./widgets/volume_popup.yuck")
 (include "./widgets/weather-tooltip-window.yuck")
 (include "./widgets/wifi_tooltips.yuck")
+(include "./widgets/opened_windows.yuck")

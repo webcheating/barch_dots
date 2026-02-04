@@ -1,7 +1,7 @@
 ;; Eww Bar Configuration
 
-(deflisten workspaces :initial "[]" 
-  "bash ~/.config/eww/scripts/get-workspaces.sh")
+;;(deflisten workspaces :initial "[]" 
+;;  "bash ~/.config/eww/scripts/get_workspaces_openbox.sh")
 
 ;;(deflisten current-mode :initial "default"
 ;;  "~/.config/eww/scripts/i3-mode.sh")
@@ -11,12 +11,12 @@
   "~/.config/eww/scripts/xwindow-clickable.sh")
 
 ;; Definisi variable untuk WiFi
-(defpoll system_status :interval "10s"
+(defpoll system_status :interval "20s"
   :initial '{"wifi":"","volume":""}'
   "~/.config/eww/scripts/wifi-status.sh")
 
 ;; Variable untuk waktu
-(defpoll time :interval "5s"
+(defpoll time :interval "1s"
   "date '+%H:%M'")
 
 ;;(defwidget mode-indicator []
@@ -27,16 +27,16 @@
 ;;    (label :class "indicator-i3"
 ;;           :text "${current-mode}")))
 
-(defwidget workspaces_widget []
-  (eventbox :onscroll "i3-msg workspace {}"
-    (box :class "i3-section"
-         :spacing 2
-         :valign "center"
-         :vexpand false
-      (for ws in workspaces
-        (button :class "ws-btn ${ws.focused ? 'focused' : ''} ${ws.urgent ? 'urgent' : ''} ${ws.visible ? 'visible' : ''}"
-                :onclick "i3-msg 'workspace number ${ws.num}'"
-          "${ws.name}")))))
+;;(defwidget workspaces_widget []
+;;  (eventbox :onscroll "i3-msg workspace {}"
+;;    (box :class "i3-section"
+;;         :spacing 2
+;;         :valign "center"
+;;         :vexpand false
+;;      (for ws in workspaces
+;;        (button :class "ws-btn ${ws.focused ? 'focused' : ''} ${ws.urgent ? 'urgent' : ''} ${ws.visible ? 'visible' : ''}"
+;;                :onclick "wmctrl -s ${ws.num - 1}"
+;;          "${ws.name}")))))
 
 ;; Main Bar Widget
 (defwidget bar-widget []
@@ -44,6 +44,7 @@
              :orientation "h"
              :valign "center"
              :vexpand false
+             ;; :hexpand true
 
     ;; ----------------------------------------------------------------
     ;; Bagian Kiri (start)
@@ -60,7 +61,14 @@
         (label :class "left-text"
                :text " "))
         
-      (workspaces_widget)
+      ;;(workspaces_widget)
+      
+      ;;(box
+      ;;  :class "bar"
+      ;;  :spacing 10
+      ;;  :valign "center"
+      ;;  :orientation "h"
+      ;;  (window-list))
 
       (eventbox :onhover "eww update show_weather_tooltip=true && eww open weather-tooltip-window"
                 :onhoverlost "eww update show_weather_tooltip=false && eww close weather-tooltip-window"
@@ -73,9 +81,17 @@
                  :text WEATHER_DESC)
         )
       )
+        
+       ;;(box
+       ;;     :class "bar"
+       ;;     :spacing 10
+       ;;     :valign "center"
+       ;;     :orientation "h"
+       ;;     (window-list))
 
-;;      (mode-indicator)
+       ;;(mode-indicator)
     )
+
     
     ;; ----------------------------------------------------------------
     ;; Bagian Tengah (center) 
@@ -117,7 +133,7 @@
       (box :class "system-tray-bar"
            :valign "center"
            :vexpand false
-        (systray :icon-size 12
+        (systray :icon-size 14
                  :spacing 8)
       )
 
@@ -165,7 +181,7 @@
 ;; Window Definition
 (defwindow bar
   :monitor 0
-  :geometry (geometry :x "14px"
+  :geometry (geometry :x "17px"
                       :y "10px"
                       :width "98%"
                       :height "27px"

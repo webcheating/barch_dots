@@ -1,0 +1,12 @@
+(defpoll windows :interval "1s"
+  "/tmp/qwe/opened_windows.sh")
+
+(defwidget window-list []
+  (box
+    :orientation "h"
+    :spacing 8
+    (for win in windows
+      (button
+        :class "window"
+        :onclick (format "wmctrl -ia %s" (get win "id"))
+        (label :text (get win "title"))))))

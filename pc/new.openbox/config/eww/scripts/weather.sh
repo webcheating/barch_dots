@@ -7,12 +7,12 @@ source "$HOME/.cache/m3-colors/colors.sh"
 # API settings ________________________________________________________________
 
 # Open-Meteo 
-CITY_NAME='Jakarta'
-COUNTRY_CODE='ID'
+CITY_NAME='Düsseldorf'
+COUNTRY_CODE='DE'
 
 # FILL WITH LATITUDE AND LONGITUDE
-LATITUDE="-6.17511"  # Semarang latitude
-LONGITUDE="106.86504"  # Semarang longitude
+LATITUDE="51.22172"  # Semarang latitude
+LONGITUDE="6.77616"  # Semarang longitude
 
 # Desired output language 
 LANG="en"

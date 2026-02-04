@@ -247,9 +247,9 @@
               :onclick "alacritty -e nvim & eww close performance_monitor"
         (label :class "app-icon-2" :text ""))
       
-      ;; calibre
+      ;; obsidian
       (button :class "app-button"
-              :onclick "calibre & eww close performance_monitor"
+              :onclick "obsidian & eww close performance_monitor"
         (label :class "app-icon-3" :text "")))
 
     ;; Row 3
@@ -257,15 +257,16 @@
          :space-evenly true
          :spacing 5
       
-      ;; image viewer
-      (button :class "app-button"
-              :onclick "qimgv & eww close performance_monitor"
-        (label :class "app-icon-4" :text ""))
+      ;; telegram 
+      ;;(button :class "app-button"
+      ;;        :onclick "qimgv & eww close performance_monitor"
+      ;;  (label :class "app-icon-4" :text ""))
       
       ;; Terminal
-      (button :class "app-button"
-              :onclick "cheese & eww close performance_monitor"
-        (label :class "app-icon-5" :text "")))
+      ;;(button :class "app-button"
+      ;;        :onclick "cheese & eww close performance_monitor"
+      ;;  (label :class "app-icon-5" :text ""))
+      )
     ))
 
 ;; WIDGET MEDIA PLAYER

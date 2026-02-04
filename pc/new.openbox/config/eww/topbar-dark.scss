@@ -4,13 +4,13 @@
 .bar-container {
   background-color: transparent;
   background-image: linear-gradient(135deg,
-      transparentize(#000000, 0.6),
-      transparentize(transparent, 0.4),
-      transparentize(transparent, 0.4),
-      transparentize(#000000, 0.6),
-      transparentize(transparent, 0.4),
-      transparentize(transparent, 0.4),
-      transparentize(#000000, 0.7),
+      transparentize(#00386c, 0.9),
+      transparentize(#00386c, 0.8),
+      transparentize(transparent, 0.6),
+      transparentize(#00386c, 0.7),
+      transparentize(transparent, 0.6),
+      transparentize(#00386c, 0.9),
+      transparentize(#00386c, 0.8),
     );
   /*background-image: linear-gradient(135deg,
       $on-secondary-fixed,
@@ -22,11 +22,23 @@
       $on-secondary,
     );*/
 
-  border: 0.5px solid transparentize($outline-variant, 0.5);
-  border-radius: 6px;
-  padding: 0px 5px 0px 5px;
+  /*border: 0.5px solid transparentize($outline-variant, 0.5);*/
+  border: 0.8px solid transparentize(#00386c, 0.7);
+  border-radius: 8px;
+  padding: 0px 2px 0px 5px;
   min-height: 27px;
 }
+
+/*
+.window {
+  padding: 0px 15px;
+  border-radius: 6px;
+  background: transparent;
+}
+
+.window:hover {
+  background: #313244;
+} */
 
 /* Sections Layout */
 .bar-section-center,
@@ -131,9 +143,7 @@
   padding: 0px;
   min-height: 18px;
 
-  background-image: linear-gradient(to bottom right,
-      $surface-container-high,
-      $on-secondary-fixed );
+  background-color: transparent;
 }
 
 /* Workspace Buttons */
@@ -154,18 +164,14 @@
 
 /* Workspace: Hover */
 .ws-btn:hover {
-  background-image: linear-gradient(to bottom,
-      $tertiary,
-    );
+  background-color: transparent;
   color: $on-tertiary;
   border-radius: 6px;
 }
 
 /* Workspace: Focused + Hover */
 .ws-btn.focused:hover {
-  background-image: linear-gradient(to bottom,
-      $primary-fixed-dim,
-    );
+  background-color: transparent;
 }
 
 /* Right Status Modules (Battery, Wifi, etc) */
@@ -173,7 +179,7 @@
   background-image: linear-gradient(135deg,
       $on-secondary-fixed,
       $surface-container );
-  border-radius: 6px;
+  border-radius: 5px;
   padding: 0px 10px;
   min-height: 18px;
 }
@@ -187,15 +193,15 @@
 /* === TEXT STYLES === */
 
 .left-text {
-  font-size: 14px;
+  font-size: 16px;
   color: $on-surface;
 }
 
 .right-text {
   /* font-family: "Iosevka Nerd Font"; */
   font-family: "JetBrains Mono Nerd Font";
-  font-size: 13px;
-  font-weight: 800;
+  font-size: 14px;
+  font-weight: 700;
   color: $on-surface;
 }
 
@@ -209,7 +215,7 @@
 
 .weather-bar {
   color: #000000;
-  font-size: 18px;
+  font-size: 16px;
   padding-right: 5px;
 }
 
