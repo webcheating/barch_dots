@@ -117,7 +117,7 @@
       (box :class "system-tray-bar"
            :valign "center"
            :vexpand false
-        (systray :icon-size 17
+        (systray :icon-size 18
                  :spacing 8)
       )
 
