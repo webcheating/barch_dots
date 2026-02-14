@@ -1,0 +1,2 @@
+event=button/micmute.*
+action=/etc/acpi/actions/micmute.sh

@@ -11,8 +11,8 @@
   "~/.config/eww/scripts/xwindow-clickable.sh")
 
 ;; Definisi variable untuk WiFi
-(defpoll system_status :interval "20s"
-  :initial '{"wifi":"","volume":""}'
+(defpoll system_status :interval "2s"
+  :initial '{"wifi":"","layout":"","volume":""}'
   "~/.config/eww/scripts/wifi-status.sh")
 
 ;; Variable untuk waktu
@@ -130,15 +130,14 @@
          :valign "center"
          :vexpand false
 
-      (box :class "system-tray-bar"
-           :valign "center"
-           :vexpand false
+    (box :class "system-tray-bar"
+        :valign "center"
+        :vexpand false
         (systray :icon-size 14
-                 :spacing 8)
-      )
+            :spacing 8))
 
-      (eventbox :onclick "~/.config/eww/scripts/toggle-control-center.sh"
-              :timeout "2s"        
+    (eventbox :onclick "~/.config/eww/scripts/toggle-control-center.sh"
+        :timeout "2s"        
         (box :class "status-section-right"
              :orientation "h"
              :space-evenly false
@@ -147,34 +146,38 @@
              :valign "center"
              :vexpand false
 
-          ;; --- 1. WiFi ---
-          (eventbox :onhover "eww update show_wifi_tooltip=true && eww open wifi-tooltip-window"
-                    :onhoverlost "eww update show_wifi_tooltip=false && eww close wifi-tooltip-window"
+        ;; --- wifi status ---
+        (eventbox :onhover "eww update show_wifi_tooltip=true && eww open wifi-tooltip-window"
+            :onhoverlost "eww update show_wifi_tooltip=false && eww close wifi-tooltip-window"
             (label :class "right-text"
-                   :text {system_status.wifi})
-          )
+                :text {system_status.wifi}))
 
-          ;; --- 3. Brightness ---
-          (box :orientation "h"
+        ;; --- volume ---
+        (box :orientation "h"
             (label :class "right-text"
-                     :text {system_status.volume}))
+                :text {system_status.volume}))
+
+        ;; --- keyboard layout
+        (box :orientation "h"
+            (label :class "right-text"
+                :text {system_status.layout}))
         )
-      )
-
-      (box :class "time-bar"
-           :orientation "h"
-           :space-evenly false
-           :spacing 0
-           :valign "center"
-           :vexpand false
-        (label :class "time-icon" 
-               :text " ")
-        (label :class "time-text"
-               :valign "center"
-               :vexpand false 
-               :text time)
-      )
     )
+
+          (box :class "time-bar"
+               :orientation "h"
+               :space-evenly false
+               :spacing 0
+               :valign "center"
+               :vexpand false
+            (label :class "time-icon" 
+                   :text " ")
+            (label :class "time-text"
+                   :valign "center"
+                   :vexpand false 
+                   :text time)
+          )
+        )
   )
 )
 

@@ -11,7 +11,7 @@ get_wm() {
     elif pgrep -x "dwm" > /dev/null; then echo "dwm";
     elif pgrep -x "hyprland" > /dev/null; then echo "hyprland";
     elif [ "$XDG_CURRENT_DESKTOP" ]; then echo "$XDG_CURRENT_DESKTOP";
-    else echo "Unknown"; fi
+    else echo "openbox"; fi
 }
 
 # Fungsi Helper untuk Uptime Short

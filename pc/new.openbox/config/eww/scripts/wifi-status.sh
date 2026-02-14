@@ -122,6 +122,27 @@ fi
 #    bright_icon="󰃠 "
 #fi
 
+# === keyboard layout === 
+code=$(xset -q | grep LED | awk '{ print $10 }')
+
+case "${code:4:1}" in
+  '0')
+    layout='[us]'
+    ;;
+  '1')
+    layout='[ru]'
+    ;;
+  *)
+    layout='unknown'
+    ;;
+esac
+
+#if [ "$layout" = 'unknown' ]; then
+#  layout='unknown'
+#else
+#  echo "$layout"
+#fi
+
 # === Volume ===
 muted=$(pactl get-sink-mute @DEFAULT_SINK@ 2>/dev/null | grep -o 'yes')
 vol_pct=$(pactl get-sink-volume @DEFAULT_SINK@ 2>/dev/null | grep -Po '\d+(?=%)' | head -1)
@@ -144,9 +165,16 @@ fi
 # === Output JSON format untuk EWW ===
 cat << EOF
 {
-  "wifi": "$wifi_display",
-  "battery": "$bat_display",
-  "brightness": "$bright_icon",
-  "volume": "$vol_icon"
+    "wifi":"$wifi_display",
+    "volume":"$vol_icon",
+    "layout":"$layout"
 }
 EOF
+#cat << EOF
+#{
+#  "wifi": "$wifi_display",
+#  "battery": "$bat_display",
+#  "brightness": "$bright_icon",
+#  "volume": "$vol_icon"
+#}
+#EOF

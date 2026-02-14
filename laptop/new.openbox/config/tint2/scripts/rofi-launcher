@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+## Copyright (C) 2020-2024 Aditya Shakya <adi1090x@gmail.com>
+
+# Import Current Theme
+DIR="$HOME/.config/openbox"
+STYLE="default"
+#RASI="$DIR/themes/$STYLE/rofi/launcher.rasi"
+RASI="/home/user0o1/.local/share/rofi/themes/minimal.rasi"
+
+# Run
+rofi \
+    -show drun \
+	-kb-cancel Alt-F1 \
+	-theme ${RASI}
