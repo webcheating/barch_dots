@@ -33,10 +33,10 @@ mkdir -p $bck_dir
 echo "[*] installing system packages"
 # i3-wm i3status python-i3ipc
 sudo pacman -S --needed --noconfirm \
-    alacritty pcmanfm rofi picom feh scrot xclip xdotool dex \
+    neovim alacritty pcmanfm rofi picom feh scrot xclip xdotool dex \
     brightnessctl firefox playerctl lm_sensors imagemagick xsettingsd \
     python python-pip python-pipx redshift inotify-tools\
-    jq bc dunst rsync fastfetch pamixer qt5ct cava tex-gyre-fonts obconf-qt lxappearance mousepad xorg-xinput flameshot thunar direnv upower xorg-xset acpi
+    npm jq bc dunst rsync fastfetch pamixer qt5ct cava tex-gyre-fonts obconf-qt lxappearance mousepad xorg-xinput flameshot thunar direnv upower xorg-xset acpi zip unzip
 
 echo "[*] installing fonts..."
 sudo pacman -S --needed --noconfirm \
@@ -127,7 +127,7 @@ WALLPAPER=$(find ~/Pictures/wallpapers -type f \( -iname "*.jpg" -o -iname "*.pn
 
 if [ -n "$WALLPAPER" ]; then
     echo "[*] applying wallpaper: $WALLPAPER"
-    m3wal "$WALLPAPER" --full
+    m3wal "$WALLPAPER" --full --mode dark
     success "[*] wallpaper and theme applied"
 else
     warning "[!] no wallpaper found, skipping m3wal initialization"
