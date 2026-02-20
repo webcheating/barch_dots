@@ -1,0 +1,3 @@
+icons (/usr/share/icons) from pc
+
+and themes as well
