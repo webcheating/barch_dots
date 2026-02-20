@@ -23,6 +23,41 @@ require("lazy").setup("plugins", {
   change_detection = { notify = false },
 })
 
+require('cord').setup {
+    -- Your configuration options go here
+    enabled = true,
+    display = {
+        theme = 'atom', -- default, atom, catppuccin, minecraft, void, classic
+        flavor = 'dark',
+        view = 'full',
+        swap_fields = false,
+        swap_icons = false,
+    },
+    editor = {
+        client = 'neovim',
+        tooltip = 'The Superior Text Editor',
+        icon = nil,
+    },
+    idle = {
+        enabled = true,
+        timeout = 1000000,
+        -- timeout = 1,
+        show_status = true,
+        ignore_focus = true,
+        unidle_on_focus = true,
+        smart_idle = true,
+        details = '',
+        state = nil,
+        tooltip = '💤',
+        icon = nil,
+    },
+    buttons = {
+        {
+            label = 'View Repository',
+            url = function(opts) return opts.repo_url end,
+        }
+    },
+}
 -- require("keymaps")
 -- require("options")
 -- require("plugins.lazy")
