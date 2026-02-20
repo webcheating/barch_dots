@@ -114,7 +114,7 @@ fi
 
 echo "[*] setting permissions..."
 find ~/.config -type f \( -name "*.sh" -o -name "*.py" \) -exec chmod +x {} \; 2>/dev/null
-find ~/.config/Scripts -type f -name "*.py" -exec chmod +x {} \; 2>/dev/null
+#find ~/.config/Scripts -type f -name "*.py" -exec chmod +x {} \; 2>/dev/null
 sudo chmod +x ~/.local/bin/* 2>/dev/null || true
 
 echo ""
