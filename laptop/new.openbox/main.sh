@@ -44,9 +44,10 @@ sudo pacman -S --needed --noconfirm \
     ttf-jetbrains-mono ttf-fira-code ttf-dejavu \
     ttf-liberation ttf-font-awesome
 
-if pacman -Qi i3lock &> /dev/null; then
+#if pacman -Qi i3lock &> /dev/null; then
+if sudo pacman -Rdd --noconfirm i3lock; then
     echo "[*] removing i3lock (will be replaced by i3lock-color)..."
-    sudo pacman -Rdd --noconfirm i3lock
+    #sudo pacman -Rdd --noconfirm i3lock
 fi
 
 echo "[*] installing aur packages..."
