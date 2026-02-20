@@ -1,7 +1,7 @@
 ! X Resources Configuration
 ! This file will be populated by pywal/wpg
 
-Xft.dpi: 96
+Xft.dpi: 115
 Xft.antialias: true
 Xft.hinting: true
 Xft.rgba: rgb
