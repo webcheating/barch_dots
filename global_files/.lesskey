@@ -1,0 +1,10 @@
+#command
+s    forw-line
+w    back-line
+a    left-scroll
+d    right-scroll
+
+W    back-line 10
+S    forw-line 10
+#A    back-word
+#D    forw-word
