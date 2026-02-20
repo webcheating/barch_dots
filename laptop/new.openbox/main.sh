@@ -3,7 +3,7 @@
 set -e
 
 echo "================================"
-echo "[*] installing Dotfiles"
+echo "[*] installing dots"
 printf "================================\n\n"
 
 RED='\033[0;31m'
@@ -30,11 +30,12 @@ mkdir -p $bck_dir
 [ -f ~/.Xresources ] && cp ~/.Xresources $bck_dir/
 
 echo "[*] installing system packages"
+# i3-wm i3status python-i3ipc
 sudo pacman -S --needed --noconfirm \
-    i3-wm i3status alacritty pcmanfm rofi picom feh scrot xclip xdotool dex \
+    alacritty pcmanfm rofi picom feh scrot xclip xdotool dex \
     brightnessctl firefox playerctl lm_sensors imagemagick xsettingsd \
     python python-pip python-pipx redshift inotify-tools\
-    jq bc dunst rsync fastfetch pamixer python-i3ipc qt5ct cava tex-gyre-fonts obconf-qt
+    jq bc dunst rsync fastfetch pamixer qt5ct cava tex-gyre-fonts obconf-qt lxappearance mousepad xorg-xinput flameshot thunar direnv upower xorg-xset acpi
 
 echo "[*] installing fonts..."
 sudo pacman -S --needed --noconfirm \
@@ -47,7 +48,7 @@ if pacman -Qi i3lock &> /dev/null; then
     sudo pacman -Rdd --noconfirm i3lock
 fi
 
-echo "Installing AUR packages..."
+echo "[*] installing aur packages..."
 yay -Syu --needed --noconfirm \
     eww-git \
     mpdris2 \
@@ -57,7 +58,9 @@ yay -Syu --needed --noconfirm \
     ueberzugpp \
     qt6ct-kde \
     i3lock-color \
-    m3wal
+    m3wal \
+    terminus-font-ttf ttf-droid ttf-apple-emoji \
+    obmenu-generator
 
 if [ -d "fonts" ]; then
     echo "[*] installing custom fonts"
@@ -65,51 +68,47 @@ if [ -d "fonts" ]; then
     mkdir -p "$FONT_DIR"
     cp -rf fonts/* "$FONT_DIR"
     fc-cache -fv
-    success "Custom fonts installed"
+    success "[*] custom fonts installed"
 fi
 
 echo "[*] creating directories..."
-mkdir -p ~/.config/{i3,rofi,dunst,alacritty,picom,eww,m3-colors}
+mkdir -p ~/.config/{rofi,dunst,alacritty,picom,eww,m3-colors}
 mkdir -p ~/.local/{share,bin}
 mkdir -p ~/.cache
 
-echo "[*] copying dotfiles..."
 if [ -d "config" ]; then
+    echo "[*] copying .config/ files..."
     rsync -av --exclude='*.tmp' config/ ~/.config/
-    success "config copied"
+    success "[*] config copied"
 fi
 
 if [ -d "local/share" ]; then
     echo "[*] copying local/share files"
     mkdir -p ~/.local/share
     rsync -av --exclude='pipx' local/share/ ~/.local/share/
-    success "local/share copied"
+    success "[*] local/share copied"
 fi
 
 if [ -d "local/bin" ]; then
     echo "[*] copying scripts from .local/bin"
     mkdir -p ~/.local/bin
     find local/bin -maxdepth 1 -type f -exec cp {} ~/.local/bin/ \;
-    success "scripts copied"
+    success "[*] scripts copied"
 fi
-
-[ -f ".Xresources" ] && cp .Xresources ~/
-[ -f ".xprofile" ] && cp .xprofile ~/
-
 
 if [ -d "wallpapers" ]; then
     echo "[*] copying wallpapers"
     mkdir -p ~/Pictures
     [ -d "wallpapers" ] && cp -r wallpapers ~/Pictures/
-    success "wallpapers copied"
+    success "[*] wallpapers copied"
 fi
 
 echo "[*] setting up m3-colors..."
-if [ -d "m3-colors" ]; then
-    cp -r m3-colors/* ~/.config/m3-colors/
-    success "m3-colors config copied"
+if [ -d "config/m3-colors" ]; then
+    cp -r config/m3-colors/* ~/.config/m3-colors/
+    success "[*] m3-colors config copied"
 else
-    warning "m3-colors directory not found, using defaults"
+    warning "[!] m3-colors directory not found, using defaults"
 fi
 
 echo "[*] setting permissions..."
@@ -127,41 +126,67 @@ WALLPAPER=$(find ~/Pictures/wallpapers -type f \( -iname "*.jpg" -o -iname "*.pn
 if [ -n "$WALLPAPER" ]; then
     echo "[*] applying wallpaper: $WALLPAPER"
     m3wal "$WALLPAPER" --full
-    success "wallpaper and theme applied"
+    success "[*] wallpaper and theme applied"
 else
-    warning "no wallpaper found, skipping m3wal initialization"
+    warning "[!] no wallpaper found, skipping m3wal initialization"
     echo "[!] run 'm3wal /path/to/wallpaper.jpg --full' manually later"
 fi
 
+[ -f ".Xresources" ] && cp .Xresources ~/ && success "[*] .Xresources copied"
+[ -f ".xprofile" ] && cp .xprofile ~/ && success "[*] .xprofile copied"
+[ -f ".bashrc" ] && cp .bashrc ~/ && success "[*] .bashrc copied"
+[ -f "root/.bashrc" ] && sudo cp root/.bashrc /root/ && success "[*] root .bashrc copied"
+[ -f "00-keyboard.conf" ] && sudo cp 00-keyboard.conf /etc/X11/xorg.conf.d/ && success "[*] 00-keyboard.conf copied"
+[ -f "x/xprofile" ] && sudo cp x/xprofile /etc/ && success "[*] xprofile copied"
+[ -f "../../global_files/.tmux.conf" ] && cp ../../global_files/.tmux.conf ~/ && success "[*] .tmux.conf copied"
+[ -d "../../global_files/.tmux" ] && rsync -av --progrss ../../global_files/.tmux ~/ && success "[*] .tmux copied"
+
+if [ -d "x" ]; then
+    rsync -av --progress x/.x* ~/ && success "[*] .xinitrc & .xserverrc copied"
+fi
+
+[ -f "autostart" ] && sudo cp autostart /etc/xdg/openbox/ && success "[*] openbox autostart file copied"
+[ -d "../../global_files/nvim" ] && rsync -av --progress ../../global_files/nvim ~/.config/ && success "[*] nvim config copied"
+[ -d "../../global_files/nvim" ] && sudo rsync -av --progress ../../global_files/nvim /root/.config/ && success "[*] nvim config for root copied"
+
+echo "[*] installing icons and themes"
+[ -d "usr_share" ] && rsync -av --progress usr_share/ /usr/share/ && success "[*] icons and themes copied"
+
 echo ""
 echo "================================"
-echo "[*] reloading i3..."
+echo "[*] reloading openbox..."
 echo "================================"
 
 if pgrep -x "i3" > /dev/null; then
-    i3-msg restart
-    success "i3 reloaded successfully"
+    openbox --reconfigure
+    #openbox --restart
+    success "[+] openbox reloaded successfully"
 else
-    warning "i3 is not currently running"
-    echo "[!] please logout and select i3 as your window manager"
+    warning "[!] openbox is not currently running"
+    echo "[!] please logout and select openbox as your window manager"
 fi
 
 echo ""
 echo "================================"
-echo "[+] installation done"
+echo "[+] all done"
 echo "================================"
-echo "Backup saved at: $BACKUP_DIR"
+echo "[*] backup saved at: $BACKUP_DIR"
 echo ""
-echo "Installed components:"
-echo "  • i3-wm, rofi, dunst, picom"
-echo "  • alacritty, pcmanfm, feh"
-echo "  • firefox, eww, m3wal"
-echo "  • Nerd Fonts & icon fonts"
-echo ""
-echo "Next steps:"
-echo "  1. Logout and login again (or restart)"
-echo "  2. Select i3 as your window manager"
-echo "  3. Change wallpaper: m3wal /path/to/wallpaper.jpg --full"
-echo "  4. Configure m3-colors: ~/.config/m3-colors/m3-colors.conf"
+echo "[*] don't forget to to manually configure lxappearance and obconf-qt later ^_^"
 echo ""
 echo "================================"
+
+
+#echo "Installed components:"
+#echo "  • i3-wm, rofi, dunst, picom"
+#echo "  • alacritty, pcmanfm, feh"
+#echo "  • firefox, eww, m3wal"
+#echo "  • Nerd Fonts & icon fonts"
+#echo ""
+#echo "Next steps:"
+#echo "  1. Logout and login again (or restart)"
+#echo "  2. Select i3 as your window manager"
+#echo "  3. Change wallpaper: m3wal /path/to/wallpaper.jpg --full"
+#echo "  4. Configure m3-colors: ~/.config/m3-colors/m3-colors.conf"
+#echo ""
+#echo "================================"
