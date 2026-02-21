@@ -186,13 +186,13 @@
         <command>~/.config/rofi/launchers/type-6/launcher.sh</command>
       </action>
     </keybind>
-    <keybind key="C-A-Left">
+    <keybind key="C-S-j">
       <action name="GoToDesktop">
         <to>left</to>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="C-A-Right">
+    <keybind key="C-S-k">
       <action name="GoToDesktop">
         <to>right</to>
         <wrap>no</wrap>
@@ -703,7 +703,19 @@
         <width>1300</width>
         <height>800</height>
       </size>
-    </application>
+  </application>
+  <application class="Fluffychat">
+      <!-- <maximized>yes</maximized>-->
+    <decor>yes</decor>
+      <position force="yes">
+        <x>center</x>
+        <y>center</y>
+      </position>
+      <size>
+        <width>1300</width>
+        <height>800</height>
+      </size>
+  </application>
     <!--
   # this is an example with comments through out. use these to make your
   # own rules, but without the comments of course.
