@@ -51,12 +51,13 @@ require('cord').setup {
         tooltip = '💤',
         icon = nil,
     },
-    buttons = {
-        {
-            label = 'View Repository',
-            url = function(opts) return opts.repo_url end,
-        }
-    },
+    buttons = nil,
+    -- buttons = {
+    --   {
+    --     label = 'View Repository',
+    --     url = function(opts) return opts.repo_url end,
+    --   },
+    -- },
 }
 -- require("keymaps")
 -- require("options")
@@ -76,7 +77,7 @@ vim.keymap.set('n', 'q', 'i', { noremap = true })
 vim.keymap.set('n', 'c', 'a', { noremap = true })
 vim.keymap.set('n', 'C', 'a', { noremap = true })
 
-vim.keymap.set({ 'n', 'v', 'x' }, 'W', '5k')
-vim.keymap.set({ 'n', 'v', 'x' }, 'S', '5j')
+vim.keymap.set({ 'n', 'v', 'x' }, 'W', '8k')
+vim.keymap.set({ 'n', 'v', 'x' }, 'S', '8j')
 vim.keymap.set({ 'n', 'v', 'x' }, 'A', 'b')
 vim.keymap.set({ 'n', 'v', 'x' }, 'D', 'e')

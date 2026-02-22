@@ -24,7 +24,7 @@ return {
         invert_tabline = false,
         invert_intend_guides = false,
         inverse = true,
-        contrast = "hard",
+        contrast = "medium", -- hard, medium, soft
         palette_overrides = {},
         overrides = {
           -- Transparent backgrounds

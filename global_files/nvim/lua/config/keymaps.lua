@@ -61,7 +61,7 @@ map("n", "<C-S-z>", "<C-r>", { desc = "Redo" })
 -- === LINE OPERATIONS (Alt+) ===
 -- map("n", "<A-Up>", ":m .-2<CR>==", { desc = "Move line up", silent = true })
 -- map("n", "<A-Down>", ":m .+1<CR>==", { desc = "Move line down", silent = true })
--- map("i", "<A-Up>", "<Esc>:m .-2<CR>==gi", { desc = "Move line up", silent = true })
+-- map("i", "<A-Up>", "<Esc>:m .-1<CR>==gi", { desc = "Move line up", silent = true })
 -- map("i", "<A-Down>", "<Esc>:m .+1<CR>==gi", { desc = "Move line down", silent = true })
 -- map("v", "<A-Up>", ":m '<-2<CR>gv=gv", { desc = "Move lines up", silent = true })
 -- map("v", "<A-Down>", ":m '>+1<CR>gv=gv", { desc = "Move lines down", silent = true })
@@ -77,9 +77,12 @@ map("n", "<C-S-z>", "<C-r>", { desc = "Redo" })
 
 -- === WINDOW NAVIGATION ===
 map("n", "Q", "<C-w>h", { desc = "Go to left window" })
-map("n", "E", "<C-w>j", { desc = "Go to lower window" })
-map("n", "<C-k>", "<C-w>k", { desc = "Go to upper window" })
-map("n", "<C-l>", "<C-w>l", { desc = "Go to right window" })
+map("n", "E", "<C-w>l", { desc = "Go to right window" })
+map("n", "J", "<C-w>j", { desc = "Go to lower window" })
+map("n", "K", "<C-w>k", { desc = "Go to upper window" })
+-- map("n", "<C-j>", "<C-w>j", { desc = "Go to lower window" })
+-- map("n", "<C-k>", "<C-w>k", { desc = "Go to upper window" })
+
 
 -- === TAB/BUFFER NAVIGATION ===
 -- map("n", "<C-Tab>", ":bnext<CR>", { desc = "Next buffer", silent = true })
