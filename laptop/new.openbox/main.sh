@@ -27,8 +27,13 @@ fi
 bck_dir=~/cfg_bck_$(date +%Y%m%d_%H%M%S)
 echo "[*] backing up existing configs"
 mkdir -p $bck_dir
-[ -d ~/.config ] && cp -r ~/.config $bck_dir/
-[ -f ~/.Xresources ] && cp ~/.Xresources $bck_dir/
+mkdir -p $bck_dir/root
+[ -d "~/.config" ] && rsync -av ~/.config $bck_dir/
+[ -f "~/.Xresources" ] && rsync -av ~/.Xresources $bck_dir/
+[ -f "~/.bashrc" ] && rsync -av ~/.bashrc $bck_dir/
+[ -d "/root/.config" ] && sudo rsync -av /root/.config $bck_dir/root/ 
+[ -f "/root/.bashrc" ] && sudo rsync -av /root/.bashrc $bck_dir/root/
+
 
 echo "[*] installing system packages"
 # i3-wm i3status python-i3ipc
