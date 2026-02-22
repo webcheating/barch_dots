@@ -70,45 +70,46 @@ if [ -d "fonts" ]; then
     mkdir -p "$FONT_DIR"
     cp -rf fonts/* "$FONT_DIR"
     fc-cache -fv
-    success "[*] custom fonts installed"
+    success "custom fonts installed"
 fi
 
 echo "[*] creating directories..."
-mkdir -p ~/.config/{rofi,dunst,alacritty,picom,eww,m3-colors}
+mkdir -p ~/.config/{rofi,dunst,alacritty,picom,eww,m3-colors,nvim}
 mkdir -p ~/.local/{share,bin}
 mkdir -p ~/.cache
+sudo mkdir -p /root/.config/nvim
 
 if [ -d "config" ]; then
     echo "[*] copying .config/ files..."
     rsync -av --exclude='*.tmp' config/ ~/.config/
-    success "[*] config copied"
+    success "config copied"
 fi
 
 if [ -d "local/share" ]; then
     echo "[*] copying local/share files"
     mkdir -p ~/.local/share
     rsync -av --exclude='pipx' local/share/ ~/.local/share/
-    success "[*] local/share copied"
+    success "local/share copied"
 fi
 
 if [ -d "local/bin" ]; then
     echo "[*] copying scripts from .local/bin"
     mkdir -p ~/.local/bin
     find local/bin -maxdepth 1 -type f -exec cp {} ~/.local/bin/ \;
-    success "[*] scripts copied"
+    success "scripts copied"
 fi
 
 if [ -d "wallpapers" ]; then
     echo "[*] copying wallpapers"
     mkdir -p ~/Pictures
     [ -d "wallpapers" ] && cp -r wallpapers ~/Pictures/
-    success "[*] wallpapers copied"
+    success "wallpapers copied"
 fi
 
 echo "[*] setting up m3-colors..."
 if [ -d "config/m3-colors" ]; then
     cp -r config/m3-colors/* ~/.config/m3-colors/
-    success "[*] m3-colors config copied"
+    success "m3-colors config copied"
 else
     warning "[!] m3-colors directory not found, using defaults"
 fi
@@ -128,31 +129,34 @@ WALLPAPER=$(find ~/Pictures/wallpapers -type f \( -iname "*.jpg" -o -iname "*.pn
 if [ -n "$WALLPAPER" ]; then
     echo "[*] applying wallpaper: $WALLPAPER"
     m3wal "$WALLPAPER" --full --mode dark
-    success "[*] wallpaper and theme applied"
+    success "wallpaper and theme applied"
 else
     warning "[!] no wallpaper found, skipping m3wal initialization"
     echo "[!] run 'm3wal /path/to/wallpaper.jpg --full' manually later"
 fi
 
-[ -f ".Xresources" ] && cp .Xresources ~/ && success "[*] .Xresources copied"
-[ -f ".xprofile" ] && cp .xprofile ~/ && success "[*] .xprofile copied"
-[ -f ".bashrc" ] && cp .bashrc ~/ && success "[*] .bashrc copied"
-[ -f "root/.bashrc" ] && sudo cp root/.bashrc /root/ && success "[*] root .bashrc copied"
-[ -f "00-keyboard.conf" ] && sudo cp 00-keyboard.conf /etc/X11/xorg.conf.d/ && success "[*] 00-keyboard.conf copied"
-[ -f "x/xprofile" ] && sudo cp x/xprofile /etc/ && success "[*] xprofile copied"
-[ -f "../../global_files/.tmux.conf" ] && cp ../../global_files/.tmux.conf ~/ && success "[*] .tmux.conf copied"
-[ -d "../../global_files/.tmux" ] && rsync -av --progrss ../../global_files/.tmux ~/ && success "[*] .tmux copied"
+[ -f ".Xresources" ] && cp .Xresources ~/ && success ".Xresources copied"
+[ -f ".xprofile" ] && cp .xprofile ~/ && success ".xprofile copied"
+[ -f ".bashrc" ] && cp .bashrc ~/ && success ".bashrc copied"
+[ -f "root/.bashrc" ] && sudo cp root/.bashrc /root/ && success "root .bashrc copied"
+[ -f "00-keyboard.conf" ] && sudo cp 00-keyboard.conf /etc/X11/xorg.conf.d/ && success "00-keyboard.conf copied"
+[ -f "x/xprofile" ] && sudo cp x/xprofile /etc/ && success "xprofile copied"
+[ -f "../../global_files/.tmux.conf" ] && cp ../../global_files/.tmux.conf ~/ && success ".tmux.conf copied"
+[ -d "../../global_files/.tmux" ] && rsync -av --progrss ../../global_files/.tmux ~/ && success " .tmux copied"
 
 if [ -d "x" ]; then
-    rsync -av --progress x/.x* ~/ && success "[*] .xinitrc & .xserverrc copied"
+    rsync -av --progress x/.x* ~/ && success ".xinitrc & .xserverrc copied"
 fi
 
-[ -f "autostart" ] && sudo cp autostart /etc/xdg/openbox/ && success "[*] openbox autostart file copied"
-[ -d "../../global_files/nvim" ] && rsync -av --progress ../../global_files/nvim ~/.config/ && success "[*] nvim config copied"
-[ -d "../../global_files/nvim" ] && sudo rsync -av --progress ../../global_files/nvim /root/.config/ && success "[*] nvim config for root copied"
+[ -f "autostart" ] && sudo cp autostart /etc/xdg/openbox/ && success "openbox autostart file copied"
+
+git clone https://github.com/webcheating/nvim ~/.config/nvim/ && success "nvim config copied"
+sudo git clone https://github.com/webcheating/nvim /root/.config/nvim/ && success "nvim config for root copied"
+#[ -d "../../global_files/nvim" ] && rsync -av --progress ../../global_files/nvim ~/.config/ && success "nvim config copied"
+#[ -d "../../global_files/nvim" ] && sudo rsync -av --progress ../../global_files/nvim /root/.config/ && success "nvim config for root copied"
 
 echo "[*] installing icons and themes"
-[ -d "usr_share" ] && sudo rsync -av --progress usr_share/ /usr/share/ && success "[*] icons and themes copied"
+[ -d "usr_share" ] && sudo rsync -av --progress usr_share/ /usr/share/ && success "icons and themes copied"
 
 echo ""
 echo "================================"
@@ -162,7 +166,7 @@ echo "================================"
 if pgrep -x "i3" > /dev/null; then
     openbox --reconfigure
     #openbox --restart
-    success "[+] openbox reloaded successfully"
+    success "openbox reloaded successfully"
 else
     warning "[!] openbox is not currently running"
     echo "[!] please logout and select openbox as your window manager"
