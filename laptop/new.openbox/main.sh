@@ -155,6 +155,7 @@ fi
 
 [ -f "autostart" ] && sudo cp autostart /etc/xdg/openbox/ && success "openbox autostart file copied"
 
+rm -rf ~/.config/nvim/* && sudo rm -rf /root/.config/nvim/*
 git clone https://github.com/webcheating/nvim ~/.config/nvim/ && success "nvim config copied"
 sudo git clone https://github.com/webcheating/nvim /root/.config/nvim/ && success "nvim config for root copied"
 #[ -d "../../global_files/nvim" ] && rsync -av --progress ../../global_files/nvim ~/.config/ && success "nvim config copied"
