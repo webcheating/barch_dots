@@ -1,3 +1,9 @@
 icons (/usr/share/icons) from pc
 
 and themes as well
+
+add i3lock autosetup
+
+add .lesskey, btop & bat to installation proccess
+
+replace sudo with doas
