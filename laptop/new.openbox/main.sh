@@ -17,6 +17,22 @@ warning() { echo -e "${YELLOW}[!] $1${NC}"; }
 
 sudo pacman -Syu --needed --noconfirm base-devel git
 
+
+if [ -f /etc/os-release ]; then
+    . /etc/os-release
+    if [[ "$id" == "arch" ]]; then
+        true
+    elif [[ "$id" == "artix" ]]; then
+        sudo pacman -S artix-archlinux-support
+        sudo pacman-key --populate archlinux
+        echo -e "[extra]\nInclude = /etc/pacman.d/mirrorlist-arch\n\n[multilib]\nInclude = /etc/pacman.d/mirrorlist-arch"
+    else
+        echo "unknown distro: $id"
+    fi
+else
+    echo "/etc/os-release error"
+fi
+
 if ! command -v yay &> /dev/null && ! command -v paru &> /dev/null; then
     echo "[*] installing aur"
     git clone https://aur.archlinux.org/yay.git /tmp/yay
@@ -147,7 +163,7 @@ fi
 [ -f "00-keyboard.conf" ] && sudo cp 00-keyboard.conf /etc/X11/xorg.conf.d/ && success "00-keyboard.conf copied"
 [ -f "x/xprofile" ] && sudo cp x/xprofile /etc/ && success "xprofile copied"
 [ -f "../../global_files/.tmux.conf" ] && cp ../../global_files/.tmux.conf ~/ && success ".tmux.conf copied"
-[ -d "../../global_files/.tmux" ] && rsync -av --progrss ../../global_files/.tmux ~/ && success " .tmux copied"
+[ -d "../../global_files/.tmux" ] && rsync -av --progress ../../global_files/.tmux ~/ && success " .tmux copied"
 
 if [ -d "x" ]; then
     rsync -av --progress x/.x* ~/ && success ".xinitrc & .xserverrc copied"
