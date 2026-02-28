@@ -20,14 +20,16 @@ sudo pacman -Syu --needed --noconfirm base-devel git
 
 if [ -f /etc/os-release ]; then
     . /etc/os-release
-    if [[ "$id" == "arch" ]]; then
+    if [[ "$ID" == "arch" ]]; then
         true
-    elif [[ "$id" == "artix" ]]; then
-        sudo pacman -S artix-archlinux-support
+    elif [[ "$ID" == "artix" ]]; then
+        sudo pacman -S --needed artix-archlinux-support
         sudo pacman-key --populate archlinux
-        echo -e "[extra]\nInclude = /etc/pacman.d/mirrorlist-arch\n\n[multilib]\nInclude = /etc/pacman.d/mirrorlist-arch"
+        if ! grep -q "\[extra\]" /etc/pacman.conf; then
+            echo -e "[extra]\nInclude = /etc/pacman.d/mirrorlist-arch\n\n[multilib]\nInclude = /etc/pacman.d/mirrorlist-arch" | sudo tee -a /etc/pacman.conf
+        fi
     else
-        echo "unknown distro: $id"
+        echo "unknown distro: $ID"
     fi
 else
     echo "/etc/os-release error"
