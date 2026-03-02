@@ -25,9 +25,14 @@ if [ -f /etc/os-release ]; then
     elif [[ "$ID" == "artix" ]]; then
         sudo pacman -S --needed artix-archlinux-support
         sudo pacman-key --populate archlinux
+<<<<<<< Updated upstream
         if ! grep -q "\[extra\]" /etc/pacman.conf; then
             echo -e "[extra]\nInclude = /etc/pacman.d/mirrorlist-arch\n\n[multilib]\nInclude = /etc/pacman.d/mirrorlist-arch" | sudo tee -a /etc/pacman.conf
         fi
+=======
+        echo -e "[extra]\nInclude = /etc/pacman.d/mirrorlist-arch\n\n[multilib]\nInclude = /etc/pacman.d/mirrorlist-arch" | sudo tee -a /etc/pacman.conf
+	yay -Sy
+>>>>>>> Stashed changes
     else
         echo "unknown distro: $ID"
     fi

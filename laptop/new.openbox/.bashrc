@@ -41,11 +41,94 @@ use() {
   fi
 }
 
+pac() {
+    local sub="$1"
+    shift || { echo "usage: pac {add|del|find|new/update} ..."; return 1; }
+
+    case "$sub" in
+        add)
+            for arg in "$@"; do
+                [[ "$arg" == -S* ]] && exec doas pacman "$@"
+            done
+            doas pacman -S "$@"
+            ;;
+
+        del|remove)
+            for arg in "$@"; do
+                [[ "$arg" == -R* ]] && exec doas pacman "$@"
+            done
+            doas pacman -Rns "$@"
+            ;;
+
+        new|update)
+            doas pacman -Syuv
+            ;;
+
+        find|search)
+            for arg in "$@"; do
+                [[ "$arg" == -S* ]] && exec doas pacman "$@"
+            done
+            doas pacman -Ss "$@"
+            ;;
+
+        *)
+            echo "usage:"
+            echo "  pac add  <pkg> [flags]"
+            echo "  pac del  <pkg> [flags]"
+            echo "  pac find <query> [flags]"
+            echo "  pac new"
+            return 1
+            ;;
+    esac
+}
+
+com() {
+    local sub="$1"
+    shift || { echo "usage: com {add|del|find|new/update} ..."; return 1; }
+
+    case "$sub" in
+        add)
+            for arg in "$@"; do
+                [[ "$arg" == -S* ]] && exec yay "$@"
+            done
+            yay -S "$@"
+            ;;
+
+        del|remove)
+            for arg in "$@"; do
+                [[ "$arg" == -R* ]] && exec yay "$@"
+            done
+            yay -Rns "$@"
+            ;;
+
+        new|update)
+            yay -Syuv
+            ;;
+
+        find|search)
+            for arg in "$@"; do
+                [[ "$arg" == -S* ]] && exec yay "$@"
+            done
+            yay -Ss "$@"
+            ;;
+
+        *)
+            echo "usage:"
+            echo "  com add  <pkg> [flags]"
+            echo "  com del  <pkg> [flags]"
+            echo "  com find <query> [flags]"
+            echo "  com new"
+            return 1
+            ;;
+    esac
+}
+
+alias sudo='doas'
 alias flameshot='QT_ENABLE_HIGHDPI_SCALING=0 flameshot'
 alias cb='xclip -selection clipboard -i $@'
 alias vim=nvim
 alias vi=vim
-alias svim='sudo nvim'
+alias svim='doas nvim'
 alias l='ls -la --color=auto'
 alias ls='ls --color=auto'
 alias sl='ls'

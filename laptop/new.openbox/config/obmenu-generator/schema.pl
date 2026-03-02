@@ -9,7 +9,8 @@ require "$ENV{HOME}/.config/obmenu-generator/config.pl";
 our $SCHEMA = [
 	{sep => 'Pinned'},
 	{item => ['vesktop', 'Vesktop', 'application-x-executable']},
-    {item => ['telegram-desktop', 'Telegram', 'application-x-executable']},
+    {item => ['Telegram', 'Telegram', 'application-x-executable']},
+    {item => ['signal-desktop', 'Signal', 'application-x-executable']},
 	{item => ['steam', 'Steam', 'application-x-executable']},
 
     {sep => 'Applications'},

@@ -7,3 +7,4 @@ add i3lock autosetup
 add .lesskey, btop & bat to installation proccess
 
 replace sudo with doas
+123
