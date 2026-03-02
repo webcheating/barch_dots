@@ -25,14 +25,10 @@ if [ -f /etc/os-release ]; then
     elif [[ "$ID" == "artix" ]]; then
         sudo pacman -S --needed artix-archlinux-support
         sudo pacman-key --populate archlinux
-<<<<<<< Updated upstream
         if ! grep -q "\[extra\]" /etc/pacman.conf; then
             echo -e "[extra]\nInclude = /etc/pacman.d/mirrorlist-arch\n\n[multilib]\nInclude = /etc/pacman.d/mirrorlist-arch" | sudo tee -a /etc/pacman.conf
         fi
-=======
         echo -e "[extra]\nInclude = /etc/pacman.d/mirrorlist-arch\n\n[multilib]\nInclude = /etc/pacman.d/mirrorlist-arch" | sudo tee -a /etc/pacman.conf
-	yay -Sy
->>>>>>> Stashed changes
     else
         echo "unknown distro: $ID"
     fi
@@ -185,7 +181,7 @@ sudo git clone https://github.com/webcheating/nvim /root/.config/nvim/ && succes
 #[ -d "../../global_files/nvim" ] && sudo rsync -av --progress ../../global_files/nvim /root/.config/ && success "nvim config for root copied"
 
 echo "[*] installing icons and themes"
-[ -d "usr_share" ] && sudo rsync -av usr_share/ /usr/share/ && success "icons and themes copied"
+[ -d "../../global_files/usr_share" ] && sudo rsync -av ../../global_files/usr_share/ /usr/share/ && success "icons and themes copied"
 
 echo ""
 echo "================================"
