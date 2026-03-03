@@ -61,7 +61,7 @@ sudo pacman -S --needed --noconfirm \
     neovim alacritty pcmanfm rofi picom feh scrot xclip xdotool dex \
     brightnessctl firefox playerctl lm_sensors imagemagick xsettingsd \
     python python-pip python-pipx redshift inotify-tools\
-    npm jq bc dunst rsync fastfetch pamixer qt5ct cava tex-gyre-fonts obconf-qt lxappearance mousepad xorg-xinput flameshot thunar direnv upower xorg-xset acpi zip unzip
+    npm jq bc dunst rsync fastfetch pamixer qt5ct cava tex-gyre-fonts obconf-qt lxappearance mousepad xorg-xinput flameshot thunar direnv upower xorg-xset acpi zip unzip nvidia-open amd-ucode
 
 echo "[*] installing fonts..."
 sudo pacman -S --needed --noconfirm \
