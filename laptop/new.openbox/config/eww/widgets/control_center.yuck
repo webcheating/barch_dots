@@ -671,7 +671,7 @@
             ;; Brightness
             (slider_row :icon_left "󰃞 "
                         :value brightness_level
-                        :onchange "~/.config/i3/brightness.sh set {}")
+                        :onchange "~/.config/eww/scripts/brightness.sh set {}")
             
             (box :orientation "h"
                  :vexpand false

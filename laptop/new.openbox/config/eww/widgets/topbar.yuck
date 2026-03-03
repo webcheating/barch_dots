@@ -132,11 +132,11 @@
              :vexpand false
 
           ;; --- 1. WiFi ---
-          (eventbox :onhover "eww update show_wifi_tooltip=true && eww open wifi-tooltip-window"
-                    :onhoverlost "eww update show_wifi_tooltip=false && eww close wifi-tooltip-window"
-            (label :class "right-text"
+          ;;(eventbox :onhover "eww update show_wifi_tooltip=true && eww open wifi-tooltip-window"
+          ;;          :onhoverlost "eww update show_wifi_tooltip=false && eww close wifi-tooltip-window"
+          (label :class "right-text"
                    :text {system_status.wifi})
-          )
+          ;;)
 
           ;; --- 2. Battery ---
           (eventbox :onhover "eww update show_battery_tooltip=true && eww open battery-tooltip-window"

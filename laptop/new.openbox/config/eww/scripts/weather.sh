@@ -7,12 +7,15 @@ source "$HOME/.cache/m3-colors/colors.sh"
 # API settings ________________________________________________________________
 
 # Open-Meteo 
-CITY_NAME='Düsseldorf'
+CITY_NAME='Bonn'
 COUNTRY_CODE='DE'
 
 # FILL WITH LATITUDE AND LONGITUDE
-LATITUDE="51.22172"  # Semarang latitude
-LONGITUDE="6.77616"  # Semarang longitude
+# Dusseldorf
+#LATITUDE="51.22172"  # Semarang latitude
+#LONGITUDE="6.77616"  # Semarang longitude
+LATITUDE="50.7374"
+LONGITUDE="7.0982"
 
 # Desired output language 
 LANG="en"
