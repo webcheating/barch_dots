@@ -147,11 +147,13 @@
              :vexpand false
 
         ;; --- wifi status ---
-        (eventbox :onhover "eww update show_wifi_tooltip=true && eww open wifi-tooltip-window"
-            :onhoverlost "eww update show_wifi_tooltip=false && eww close wifi-tooltip-window"
-            (label :class "right-text"
-                :text {system_status.wifi}))
-
+        ;; (eventbox :onhover "eww update show_wifi_tooltip=true && eww open wifi-tooltip-window"
+            ;; :onhoverlost "eww update show_wifi_tooltip=false && eww close wifi-tooltip-window"
+            ;; (label :class "right-text"
+                ;; :text {system_status.wifi}))
+        (label :class "right-text"
+            :text {system_status.wifi})
+   
         ;; --- volume ---
         (box :orientation "h"
             (label :class "right-text"
@@ -185,7 +187,7 @@
 (defwindow bar
   :monitor 0
   :geometry (geometry :x "17px"
-                      :y "10px"
+                      :y "7px"
                       :width "98%"
                       :height "27px"
                       :anchor "top left")

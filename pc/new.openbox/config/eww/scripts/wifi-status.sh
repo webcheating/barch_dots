@@ -2,6 +2,7 @@
 # ~/.config/eww/scripts/system-status.sh
 # === WiFi Status ===
 wifi_interface="enp4s0"
+#wifi_interface='wlp1s0f0u2'
 wifi_state=$(cat /sys/class/net/$wifi_interface/operstate 2>/dev/null)
 if [ "$wifi_state" = "up" ]; then
     # Get signal strength

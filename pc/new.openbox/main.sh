@@ -27,8 +27,9 @@ if [ -f /etc/os-release ]; then
         sudo pacman-key --populate archlinux
         if ! grep -q "\[extra\]" /etc/pacman.conf; then
             echo -e "[extra]\nInclude = /etc/pacman.d/mirrorlist-arch\n\n[multilib]\nInclude = /etc/pacman.d/mirrorlist-arch" | sudo tee -a /etc/pacman.conf
+	    sudo pacman -Sy
+	    yay -Sy
         fi
-        echo -e "[extra]\nInclude = /etc/pacman.d/mirrorlist-arch\n\n[multilib]\nInclude = /etc/pacman.d/mirrorlist-arch" | sudo tee -a /etc/pacman.conf
     else
         echo "unknown distro: $ID"
     fi
