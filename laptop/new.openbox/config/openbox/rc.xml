@@ -40,7 +40,7 @@
     <center>yes</center>
   </placement>
   <theme>
-    <name>Syscrash</name>
+    <name>Bear2</name>
     <titleLayout>LIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -151,10 +151,10 @@
      Many programs reserve space automatically, but you can use this in other
      cases. -->
   <margins>
-    <top>44</top>
-    <bottom>5</bottom>
-    <left>5</left>
-    <right>5</right>
+    <top>50</top>
+    <bottom>7</bottom>
+    <left>7</left>
+    <right>7</right>
   </margins>
   <dock>
     <position>Top</position>
@@ -185,7 +185,12 @@
         </startupnotify>
         <command>~/.config/rofi/launchers/type-6/launcher.sh</command>
       </action>
-    </keybind>
+  </keybind>
+  <keybind key="Super_L">
+    <action name="Execute">
+      <command>~/.config/eww/scripts/toggle_dashboard.sh</command>
+    </action>
+  </keybind>
     <keybind key="C-S-j">
       <action name="GoToDesktop">
         <to>left</to>
