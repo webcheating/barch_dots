@@ -191,6 +191,9 @@
       <command>~/.config/eww/scripts/toggle_dashboard.sh</command>
     </action>
   </keybind>
+  <keybind key="C-q">
+    <action name="Close"/>
+  </keybind>
     <keybind key="C-S-j">
       <action name="GoToDesktop">
         <to>left</to>
