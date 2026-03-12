@@ -42,6 +42,13 @@
 		</action>
 	</item>
 
+  <separator/>
+  <item label="Telegram">
+		<action name="Execute">
+			<command>AyuGram</command>
+		</action>
+	</item>
+
 	<separator/>
 	<item label="Thunar">
 		<action name="Execute">
