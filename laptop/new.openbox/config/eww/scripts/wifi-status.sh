@@ -142,12 +142,39 @@ else
     fi
 fi
 
+# === keyboard layout ===
+layout_raw=$(xkblayout-state print "%s")
+
+case "$layout_raw" in
+    'us') layout='[us]' ;;
+    'de') layout='[de]' ;;
+    'ru') layout='[ru]' ;;
+    *)    layout="[${layout_raw}]" ;;
+esac
+#code=$(xset -q | grep LED | awk '{ print $10 }')
+#case "${code:4:1}" in
+#    '0') layout='[us]' ;;
+#    '1') layout='[de]' ;;
+#    '2') layout='[ru]' ;;
+#    *) layout='[err]' ;;
+#esac
+
 # === Output JSON format untuk EWW ===
+#cat << EOF
+#{
+#  "wifi": "$wifi_display",
+#  "battery": "$bat_display",
+#  "brightness": "$bright_icon",
+#  "volume": "$vol_icon",
+#  "layout":"$layout"
+#}
+#EOF
+
 cat << EOF
 {
   "wifi": "$wifi_display",
   "battery": "$bat_display",
-  "brightness": "$bright_icon",
-  "volume": "$vol_icon"
+  "volume": "$vol_icon",
+  "layout":"$layout"
 }
 EOF

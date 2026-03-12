@@ -11,8 +11,8 @@
   "~/.config/eww/scripts/xwindow-clickable.sh")
 
 ;; Definisi variable untuk WiFi
-(defpoll system_status :interval "2s"
-  :initial '{"wifi":"","brightness":"","volume":"", "battery":""}'
+(defpoll system_status :interval "1s"
+  :initial '{"wifi":"","layout":"","volume":"", "battery":""}'
   "~/.config/eww/scripts/wifi-status.sh")
 
 ;; Variable untuk waktu
@@ -131,29 +131,35 @@
              :valign "center"
              :vexpand false
 
-          ;; --- 1. WiFi ---
+          ;; --- wifi status ---
           ;;(eventbox :onhover "eww update show_wifi_tooltip=true && eww open wifi-tooltip-window"
           ;;          :onhoverlost "eww update show_wifi_tooltip=false && eww close wifi-tooltip-window"
           (label :class "right-text"
                    :text {system_status.wifi})
           ;;)
 
-          ;; --- 2. Battery ---
+          ;; --- battery ---
           (eventbox :onhover "eww update show_battery_tooltip=true && eww open battery-tooltip-window"
                     :onhoverlost "eww update show_battery_tooltip=false && eww close battery-tooltip-window"
             (label :class "right-text"
                    :text {system_status.battery})
           )
 
-          ;; --- 3. Brightness ---
+          ;; --- brightness ---
           (box :orientation "h"
                  :spacing 5
-            (label :class "right-text"
-                     :text {system_status.brightness})
+            ;;(label :class "right-text"
+            ;;         :text {system_status.brightness})
             (label :class "right-text"
                      :text {system_status.volume}))
+         
+          ;; --- keyboard layout ---
+          (box :orientation "h"
+            (label :class "right-text"
+                :text {system_status.layout}))
+
         )
-      )
+    )
 
       (box :class "time-bar"
            :orientation "h"

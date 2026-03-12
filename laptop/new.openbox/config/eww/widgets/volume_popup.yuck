@@ -16,7 +16,7 @@
              :flipped true       
              :value volume_level
              :min 0
-             :max 100
+             :max 150
              :onchange "pamixer --set-volume {} && ~/.config/eww/scripts/volume-popup.sh")
       (label :class "volume-percent-popup" 
              :text "${volume_level}%"))))
