@@ -1,0 +1,50 @@
+#
+# These things are run when an Openbox X Session is started.
+# You may place a similar script in $HOME/.config/openbox/autostart
+# to run user-specific things.
+#
+
+# If you want to use GNOME config tools...
+#
+#if test -x /usr/lib/openbox/gnome-settings-daemon >/dev/null; then
+#  /usr/lib/openbox/gnome-settings-daemon &
+#elif which gnome-settings-daemon >/dev/null 2>&1; then
+#  gnome-settings-daemon &
+#fi
+
+### blackarch related ###
+#feh --bg-scale /home/user0o1/Pictures/blackarch-artwork/wallpaper/wallpaper-fog.jpg &
+feh --bg-scale /home/user0o1/Pictures/wallpapers/kittycat.png &
+
+#tint2 &
+killall -q eww
+eww daemon &
+
+while ! eww ping &>/dev/null; do
+    sleep 0.1
+done
+
+eww open bar &
+
+(
+  for i in $(seq 1 50); do
+    xprop -root _NET_SYSTEM_TRAY_S0 &>/dev/null && break
+    sleep 0.1
+  done
+  sleep 0.3
+  flameshot
+) &
+
+## Start Compositing Manager
+#exec picom &
+picom &
+
+if [[ ! `pidof xfce-polkit` ]]; then
+  /usr/lib/xfce-polkit/xfce-polkit &
+fi
+
+xinput set-prop 12 "libinput Tapping Enabled" 1
+#xinput --set-prop 8 "libinput Accel Profile Enabled" 1, 0 && xinput --set-prop 8 "libinput Accel Speed" -0.5 && xinput --set-prop 8 "Coordinate Transformation Matrix" 0.4 0 0 0 0.4 0 0 0 1
+dunst &
+#librepods &
+xss-lock -- lock &

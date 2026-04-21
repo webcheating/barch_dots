@@ -186,11 +186,21 @@
         <command>~/.config/rofi/launchers/type-6/launcher.sh</command>
       </action>
   </keybind>
+
   <keybind key="Super_L">
     <action name="Execute">
-      <command>~/.config/eww/scripts/toggle_dashboard.sh</command>
+        <command>~/.config/eww/scripts/toggle_panels.sh</command>
     </action>
+    <!--
+    <action name="Execute">
+        <command>~/.config/eww/scripts/toggle_dashboard.sh</command>
+    </action>
+    <action name="Execute">
+        <command>~/.config/eww/scripts/toggle-control-center.sh</command>
+    </action>
+    -->
   </keybind>
+
   <keybind key="C-q">
     <action name="Close"/>
   </keybind>

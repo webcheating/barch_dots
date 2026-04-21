@@ -98,7 +98,7 @@ if [ -d "fonts" ]; then
 fi
 
 echo "[*] creating directories..."
-mkdir -p ~/.config/{rofi,dunst,alacritty,picom,eww,m3-colors,nvim}
+mkdir -p ~/.config/{rofi,dunst,alacritty,picom,eww,m3-colors,nvim,openbox}
 mkdir -p ~/.local/{share,bin}
 mkdir -p ~/.cache
 sudo mkdir -p /root/.config/nvim
@@ -172,7 +172,7 @@ if [ -d "x" ]; then
     rsync -av --progress x/.x* ~/ && success ".xinitrc & .xserverrc copied"
 fi
 
-[ -f "autostart" ] && sudo cp autostart /etc/xdg/openbox/ && success "openbox autostart file copied"
+#[ -f "autostart" ] && sudo cp autostart /etc/xdg/openbox/ && success "openbox autostart file copied"
 
 rm -rf ~/.config/nvim/* && sudo rm -rf /root/.config/nvim/*
 git clone https://github.com/webcheating/nvim ~/.config/nvim/ && success "nvim config copied"
