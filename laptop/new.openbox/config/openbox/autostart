@@ -12,6 +12,8 @@
 #  gnome-settings-daemon &
 #fi
 
+picom &
+
 ### blackarch related ###
 #feh --bg-scale /home/user0o1/Pictures/blackarch-artwork/wallpaper/wallpaper-fog.jpg &
 feh --bg-scale /home/user0o1/Pictures/wallpapers/kittycat.png &
@@ -37,7 +39,6 @@ eww open bar &
 
 ## Start Compositing Manager
 #exec picom &
-picom &
 
 if [[ ! `pidof xfce-polkit` ]]; then
   /usr/lib/xfce-polkit/xfce-polkit &
