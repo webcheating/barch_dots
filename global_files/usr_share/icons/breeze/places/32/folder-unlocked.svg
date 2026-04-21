@@ -1,35 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <defs id="defs3051">
-    <style type="text/css" id="current-color-scheme">
-      .ColorScheme-Text {
-        color:#31363b;
-      }
-      .ColorScheme-Accent {
-        color:#3daee9;
-      }
-      </style>
-  </defs>
- <path 
-     style="fill:currentColor;fill-opacity:1;stroke:none" 
-     d="M 2 3 L 2 10 L 1 10 L 1 29 L 12 29 L 13 29 L 31 29 L 31 8 L 30 8 L 30 5 L 16 5 L 14 3 L 2 3 z "
-     class="ColorScheme-Accent"
-     />
- <path 
-     style="fill-opacity:0.33;fill-rule:evenodd"
-     d="m 2,3 0,7 9,0 L 13,8 30,8 30,5 16,5 14,3 2,3 Z"
-     />
- <path 
-     style="fill:#ffffff;fill-opacity:0.2;fill-rule:evenodd"
-     d="M 14 3 L 15 6 L 30 6 L 30 5 L 16 5 L 14 3 z M 13 8 L 11 10 L 1 10 L 1 11 L 12 11 L 13 8 z "
-     />
- <path 
-     style="fill-opacity:0.2;fill-rule:evenodd"
-     d="M 13 8 L 11 9 L 2 9 L 2 10 L 11 10 L 13 8 z M 1 28 L 1 29 L 31 29 L 31 28 L 1 28 z "
-     class="ColorScheme-Text"
-     />
- <path 
-     style="fill:currentColor;fill-opacity:0.6;stroke:none" 
-     d="M 16 13 C 14.3 13 13 14.3 13 16 L 14 16 C 14 14.9 14.9 14 16 14 C 17.1 14 18 14.9 18 16 L 18 18 L 12 18 L 12 23 L 20 23 L 20 18 L 19 18 L 19 16 C 19 14.3 17.7 13 16 13 z M 13 19 L 19 19 L 19 22 L 13 22 L 13 19 z "
-     class="ColorScheme-Text"
-     />
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" version="1.1">
+ <defs>
+  <style id="current-color-scheme" type="text/css">
+   .ColorScheme-Text { color:#444444; } .ColorScheme-Highlight { color:#4285f4; } .ColorScheme-NeutralText { color:#ff9800; } .ColorScheme-PositiveText { color:#4caf50; } .ColorScheme-NegativeText { color:#f44336; }
+  </style>
+ </defs>
+ <path style="fill:currentColor" class="ColorScheme-Text" d="M 8,0 C 5.784,0 4,1.821 4,4.062 V 5 H 6 V 4 C 6,2.891 6.892,2 8,2 9.108,2 10,2.891 10,4 V 8 H 8 3 C 2.446,8 2,8.446 2,9 V 15 C 2,15.554 2.446,16 3,16 H 13 C 13.554,16 14,15.554 14,15 V 9 C 14,8.446 13.554,8 13,8 H 12 V 4.062 C 12,1.822 10.216,0 8,0 Z"/>
 </svg>

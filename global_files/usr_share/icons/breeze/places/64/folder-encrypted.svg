@@ -1,39 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <defs id="defs3051">
-    <style type="text/css" id="current-color-scheme">
-      .ColorScheme-Text {
-        color:#232629;
-      }
-      .ColorScheme-Accent {
-        color:#3daee9;
-      }
-      </style>
-  </defs>
- <path 
-     style="fill:#5c5c5c" 
-     d="M 4 6 L 4 11 L 4 20 L 3 20 L 3 21 L 3 21 C 3 21 3 21 3 21 L 3 57 L 3 58 L 4 58 L 60 58 L 61 58 L 61 57 L 61 21 L 61 21 L 61 16 L 60 16 L 60 11 C 60 11 60 11 60 11 L 60 11 L 60 10 L 32 10 L 28 6 L 4 6 z "
-     />
- <path 
-     style="fill-opacity:0.33"
-     d="M 4 6 L 4 11 L 4 20 L 22 20 L 26 16 L 60 16 L 60 11 C 60 11 60 11 60 11 L 60 11 L 60 10 L 32 10 L 28 6 L 4 6 z "
-     />
- <path 
-     style="fill:#ffffff;fill-opacity:0.2"
-     d="M 28 6 L 31 11 L 33 11 L 60 11 L 60 10 L 33 10 L 32 10 L 28 6 z M 26 16 L 22 20 L 3 20 L 3 21 L 23 21 L 26 16 z "
-     />
- <path 
-     style="fill-opacity:0.4;fill-rule:evenodd"
-     d="M 26 16 L 20 19 L 4 19 L 4 20 L 22 20 L 26 16 z M 3 57 L 3 58 L 4 58 L 60 58 L 61 58 L 61 57 L 60 57 L 4 57 L 3 57 z "
-     class="ColorScheme-Text"
-     />
- <path 
-     style="fill-opacity:0.2;fill-rule:evenodd"
-     d="m 3,46 v 4 h 3 v -4 z m 3,4 v 4 h 4 v -4 z m 4,0 h 4 v -4 h -4 z m 4,0 v 4 h 4 v -4 z m 4,0 h 4 v -4 h -4 z m 4,0 v 4 h 4 v -4 z m 4,0 h 4 v -4 h -4 z m 4,0 v 4 h 4 v -4 z m 4,0 h 4 v -4 h -4 z m 4,0 v 4 h 4 v -4 z m 4,0 h 4 v -4 h -4 z m 4,0 v 4 h 4 v -4 z m 4,0 h 4 v -4 h -4 z m 4,0 v 4 h 4 v -4 z m 4,0 h 3 v -4 h -3 z m 0,4 v 4 h 3 v -4 z m -4,0 h -4 v 4 h 4 z m -8,0 h -4 v 4 h 4 z m -8,0 h -4 v 4 h 4 z m -8,0 h -4 v 4 h 4 z m -8,0 h -4 v 4 h 4 z m -8,0 h -4 v 4 h 4 z M 6,54 H 3 v 4 h 3 z"
-     class="ColorScheme-Text"
-     />
- <path 
-     style="fill:currentColor;fill-opacity:0.6;stroke:none"  
-     d="M 32 27 C 29.23 27 27 29.23 27 32 L 27 37 L 24 37 L 24 47 L 40 47 L 40 37 L 37 37 L 37 32 C 37 29.23 34.77 27 32 27 z M 32 28 C 34 28 36 29.6 36 32 L 36 37 L 28 37 L 28 32 C 28 29.6 30 28 32 28 z "
-     class="ColorScheme-Text"
-     />
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" version="1.1">
+ <defs>
+  <style id="current-color-scheme" type="text/css">
+   .ColorScheme-Text { color:#444444; } .ColorScheme-Highlight { color:#4285f4; } .ColorScheme-NeutralText { color:#ff9800; } .ColorScheme-PositiveText { color:#4caf50; } .ColorScheme-NegativeText { color:#f44336; }
+  </style>
+ </defs>
+ <path style="fill:currentColor" class="ColorScheme-Text" d="M 8,1 C 5.784,1 4,2.821 4,5.062 V 7 H 3 C 2.446,7 2,7.446 2,8 V 14 C 2,14.554 2.446,15 3,15 H 13 C 13.554,15 14,14.554 14,14 V 8 C 14,7.446 13.554,7 13,7 H 12 V 5.062 C 12,2.822 10.216,1 8,1 Z M 8,3 C 9.108,3 10,3.891 10,5 V 7 H 6 V 5 C 6,3.891 6.892,3 8,3 Z"/>
 </svg>

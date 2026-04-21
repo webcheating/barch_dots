@@ -1,13 +1,8 @@
-<svg id="svg1" version="1.1" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-<!--
-SPDX-FileCopyrightText: 2024 g10 Code GmbH
-SPDX-Contributor: Carl Schwan <carlschwan@gnupg.com>
-SPDX-License-Identifier: LGPL-2.1-or-later
--->
-    <defs id="defs1">
-        <style id="current-color-scheme" type="text/css">.ColorScheme-Text {
-                color:#232629;
-            }</style>
-    </defs>
-    <path id="path1" class="ColorScheme-Text" d="m2 2v1 3 1 6 1h6v-0.960938l-5-0.039062v-6h10v1h1v-2-1-1h-4.9921875l-2-2-0.0078125 0.0078125v-0.0078125h-4-1zm1 1h3.5917969l1.0019531 1h-0.59375v0.0078125l-0.0078125-0.0078125-2 2h-1.9921875v-3zm8.5 5c-0.828399 0-1.5 0.6715708-1.5 1.5v1.5h-1v3h5v-3h-1v-1.5c0-0.8284292-0.671601-1.5-1.5-1.5zm0 1c0.2761 0 0.5 0.2238603 0.5 0.5v1.5h-1v-1.5c0-0.2761397 0.2239-0.5 0.5-0.5z" fill="currentColor"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" version="1.1">
+ <defs>
+  <style id="current-color-scheme" type="text/css">
+   .ColorScheme-Text { color:#444444; } .ColorScheme-Highlight { color:#4285f4; } .ColorScheme-NeutralText { color:#ff9800; } .ColorScheme-PositiveText { color:#4caf50; } .ColorScheme-NegativeText { color:#f44336; }
+  </style>
+ </defs>
+ <path style="fill:currentColor" class="ColorScheme-Text" d="M 8,1 C 5.784,1 4,2.821 4,5.062 V 7 H 3 C 2.446,7 2,7.446 2,8 V 14 C 2,14.554 2.446,15 3,15 H 13 C 13.554,15 14,14.554 14,14 V 8 C 14,7.446 13.554,7 13,7 H 12 V 5.062 C 12,2.822 10.216,1 8,1 Z M 8,3 C 9.108,3 10,3.891 10,5 V 7 H 6 V 5 C 6,3.891 6.892,3 8,3 Z"/>
 </svg>

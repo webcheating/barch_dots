@@ -1,35 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <defs id="defs3051">
-    <style type="text/css" id="current-color-scheme">
-      .ColorScheme-Text {
-        color:#232629;
-      }
-      .ColorScheme-Accent {
-        color:#3daee9;
-      }
-      </style>
-  </defs>
- <path 
-     style="fill:currentColor" 
-     d="M 4 6 L 4 11 L 4 20 L 3 20 L 3 21 L 3 21 C 3 21 3 21 3 21 L 3 57 L 3 58 L 4 58 L 60 58 L 61 58 L 61 57 L 61 21 L 61 21 L 61 16 L 60 16 L 60 11 C 60 11 60 11 60 11 L 60 11 L 60 10 L 32 10 L 28 6 L 4 6 z "
-     class="ColorScheme-Accent"
-     />
- <path 
-     style="fill-opacity:0.33"
-     d="M 4 6 L 4 11 L 4 20 L 22 20 L 26 16 L 60 16 L 60 11 C 60 11 60 11 60 11 L 60 11 L 60 10 L 32 10 L 28 6 L 4 6 z "
-     />
- <path 
-     style="fill:#ffffff;fill-opacity:0.2"
-     d="M 28 6 L 31 11 L 33 11 L 60 11 L 60 10 L 33 10 L 32 10 L 28 6 z M 26 16 L 22 20 L 3 20 L 3 21 L 23 21 L 26 16 z "
-     />
- <path 
-     style="fill-opacity:0.2;fill-rule:evenodd"
-     d="M 26 16 L 20 19 L 4 19 L 4 20 L 22 20 L 26 16 z M 3 57 L 3 58 L 4 58 L 60 58 L 61 58 L 61 57 L 60 57 L 4 57 L 3 57 z "
-     class="ColorScheme-Text"
-     />
- <path 
-     style="fill:currentColor;fill-opacity:0.6;stroke:none"  
-     d="M 24.7 29 L 24 29.7 L 28.3 34 L 30.3 36 L 28.3 38 L 24 42.3 L 24.7 43 L 29 38.7 L 29 38.7 L 31.7 36 L 29 33.3 L 24.7 29 z M 33 44 L 33 45 L 40 45 L 40 44 L 33 44 z "
-     class="ColorScheme-Text"
-     />
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" version="1.1">
+ <defs>
+  <style id="current-color-scheme" type="text/css">
+   .ColorScheme-Text { color:#444444; } .ColorScheme-Highlight { color:#4285f4; } .ColorScheme-NeutralText { color:#ff9800; } .ColorScheme-PositiveText { color:#4caf50; } .ColorScheme-NegativeText { color:#f44336; }
+  </style>
+ </defs>
+ <path style="fill:currentColor" class="ColorScheme-Text" d="M 1,1 V 15 H 15 V 1 Z M 5,3 H 6 V 4 H 6.5 C 7.15,4 7.7,4.42 7.91,5 H 6.5 6 V 6 H 6.5 C 7.33,6 8,6.67 8,7.5 8,8.33 7.33,9 6.5,9 H 6 V 10 H 5 V 9 H 4.5 C 3.85,9 3.3,8.58 3.09,8 H 4.5 5 V 7 H 4.5 C 3.67,7 3,6.33 3,5.5 3,4.67 3.67,4 4.5,4 H 5 Z M 4.5,5 C 4.22,5 4,5.22 4,5.5 4,5.78 4.22,6 4.5,6 H 5 V 5 Z M 6,7 V 8 H 6.5 C 6.78,8.01 7,7.78 7,7.5 7,7.22 6.78,7 6.5,7 Z M 9,9 H 13 V 10 H 9 Z"/>
 </svg>

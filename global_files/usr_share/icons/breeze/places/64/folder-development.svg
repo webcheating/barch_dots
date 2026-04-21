@@ -1,35 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <defs id="defs3051">
-    <style type="text/css" id="current-color-scheme">
-      .ColorScheme-Text {
-        color:#232629;
-      }
-      .ColorScheme-Accent {
-        color:#3daee9;
-      }
-      </style>
-  </defs>
- <path 
-     style="fill:currentColor" 
-     d="M 4 6 L 4 11 L 4 20 L 3 20 L 3 21 L 3 21 C 3 21 3 21 3 21 L 3 57 L 3 58 L 4 58 L 60 58 L 61 58 L 61 57 L 61 21 L 61 21 L 61 16 L 60 16 L 60 11 C 60 11 60 11 60 11 L 60 11 L 60 10 L 32 10 L 28 6 L 4 6 z "
-     class="ColorScheme-Accent"
-     />
- <path 
-     style="fill-opacity:0.33"
-     d="M 4 6 L 4 11 L 4 20 L 22 20 L 26 16 L 60 16 L 60 11 C 60 11 60 11 60 11 L 60 11 L 60 10 L 32 10 L 28 6 L 4 6 z "
-     />
- <path 
-     style="fill:#ffffff;fill-opacity:0.2"
-     d="M 28 6 L 31 11 L 33 11 L 60 11 L 60 10 L 33 10 L 32 10 L 28 6 z M 26 16 L 22 20 L 3 20 L 3 21 L 23 21 L 26 16 z "
-     />
- <path 
-     style="fill-opacity:0.2;fill-rule:evenodd"
-     d="M 26 16 L 20 19 L 4 19 L 4 20 L 22 20 L 26 16 z M 3 57 L 3 58 L 4 58 L 60 58 L 61 58 L 61 57 L 60 57 L 4 57 L 3 57 z "
-     class="ColorScheme-Text"
-     />
- <path 
-     style="fill:currentColor;fill-opacity:0.6;stroke:none"  
-     d="M 22 27 L 22 32 L 22 45.75 L 22 47 L 42 47 L 42 45.75 L 42 39.5 L 42 32 L 42 27 L 22 27 z M 23 32 L 41 32 L 41 46 C 35.1 45.9 28.9 45.9 23 46 L 23 32 z M 30 36 L 30 42 L 35 39 L 30 36 z "
-     class="ColorScheme-Text"
-     />
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+ <defs>
+  <style id="current-color-scheme" type="text/css">
+   .ColorScheme-Text { color:#444444; } .ColorScheme-Highlight { color:#4285f4; } .ColorScheme-NeutralText { color:#ff9800; } .ColorScheme-PositiveText { color:#4caf50; } .ColorScheme-NegativeText { color:#f44336; }
+  </style>
+ </defs>
+ <path style="fill:currentColor" class="ColorScheme-Text" d="m 6.25215,0.99889 -0.1543,1.8438 a 5.5,5.5 0 0 0 -1.6074,0.92969 l -1.6758,-0.78906 -1.75,3.0312 1.5215,1.0566 a 5.5,5.5 0 0 0 -0.084,0.92773 5.5,5.5 0 0 0 0.0801,0.93164 l -1.5176,1.0527 1.75,3.0312 1.6719,-0.7871 a 5.5,5.5 0 0 0 1.6113,0.92382 l 0.15,1.85 3.5,0 0.1543,-1.8438 a 5.5,5.5 0 0 0 1.6074,-0.92969 l 1.6758,0.78906 1.75,-3.0312 -1.5215,-1.0566 a 5.5,5.5 0 0 0 0.084,-0.92773 5.5,5.5 0 0 0 -0.0801,-0.93164 l 1.5176,-1.0527 -1.75,-3.0312 -1.6719,0.7871 A 5.5,5.5 0 0 0 9.90215,2.84889 l -0.15,-1.85 -3.5,0 z m 1.75,5 a 2,2 0 0 1 2,2 2,2 0 0 1 -2,2 2,2 0 0 1 -2,-2 2,2 0 0 1 2,-2 z"/>
 </svg>
