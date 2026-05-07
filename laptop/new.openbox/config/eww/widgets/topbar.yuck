@@ -117,7 +117,7 @@
       (box :class "system-tray-bar"
            :valign "center"
            :vexpand false
-        (systray :icon-size 22
+        (systray :icon-size 26
                  :spacing 8)
       )
 
@@ -190,5 +190,19 @@
   :exclusive false
   :focusable false
   :windowtype "dock"
-  :wm-ignore true
+  :wm-ignore false
+  (bar-widget))
+
+(defwindow bar-hdmi
+  :monitor 1
+  :geometry (geometry :x "17px"
+                      :y "7px"
+                      :width "98%"
+                      :height "27px"
+                      :anchor "top left")
+  :stacking "fg"
+  :exclusive false
+  :focusable false
+  :windowtype "dock"
+  :wm-ignore false
   (bar-widget))

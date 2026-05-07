@@ -18,7 +18,8 @@
       $surface-container-low,
       $on-secondary,
     );
-  border-radius: 10px;
+  // background-color: #000000;
+  border-radius: 7px;
   border: 1.5px solid $outline-variant;
 }
 
@@ -144,40 +145,42 @@
    =================================== */
 
 .info-card {
-  background-color: transparentize($surface-container-low, 0.2);
-  border-radius: 10px;
+  //background-color: transparentize($surface-container-low, 0.2);
+  background-color: transparent;
+  border-radius: 6px;
   padding: 5px 5px 5px 10px;
-  border: 1px solid $outline-variant;
-  min-height: 93px;
-  min-width: 211px;
+  border: 0px solid #ffffff;
+  min-height: 110px;
+  min-width: 287px;
 }
 
 .info-card-weather {
-  background-color: transparentize($surface-container-low, 0.2);
-  border-radius: 10px;
+  // background-color: transparentize($surface-container-low, 0.2);
+  background-color: transparent;
+  border-radius: 6px;
   padding: 5px 5px 5px 10px;
-  border: 1px solid $outline-variant;
-  min-height: 93px;
-  min-width: 218px;
+  border: 0px solid #ffffff;
+  min-height: 110px;
+  min-width: 280px;
 }
 
 .image {
-  min-width: 75px;
-  min-height: 75px;
+  min-width: 80px;
+  min-height: 80px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .info-text {
-  font-family: "JetBrains Mono Nerd Font", sans-serif;
-  font-size: 12px;
-  font-weight: 500;
+  font-family: "Cartograph CF";
+  font-size: 14px;
+  font-weight: 600;
   color: $on-surface;
 }
 
 .info-weather {
-  font-family: "JetBrains Mono Nerd Font", sans-serif;
+  font-family: "Cartograph CF";
   font-size: 20px;
   font-weight: bold;
   color: $secondary;
@@ -198,9 +201,9 @@
 
 .weather-icon {
   font-size: 64px;
-  margin-left: -15px;
+  margin-left: -50px;
   padding: 0px 0px 0px 0px;
-  color: $on-surface;
+  color: #ffffff;
 }
 
 .card-content {
@@ -212,15 +215,16 @@
    ======================================== */
 
 .calendar-box {
-  background-color: transparentize($surface-container-low, 0.2);
-  border: 1px solid $outline-variant;
-  border-radius: 10px;
-  min-width: 217px;
+  // background-color: transparentize($surface-container-low, 0.2);
+  background-color: transparent;
+  border: 0px solid #ffffff;
+  border-radius: 6px;
+  min-width: 330px;
   padding: 0px 3px 0px 3px;
 }
 
 .cal-widget {
-  font-family: "JetBrainsMono Nerd Font", "Noto Sans", sans-serif;
+  font-family: "Cartograph CF";
   padding: 3px 3px 3px 3px;
 }
 
@@ -229,21 +233,22 @@
    ======================================== */
 
 .clock-box {
-  background-color: transparentize($surface-container-low, 0.2);
-  border: 1px solid $outline-variant;
-  border-radius: 10px;
-  padding: 28px 10px 28px 10px;
+  // background-color: transparentize($surface-container-low, 0.2);
+  background-color: transparent;
+  border: 0px solid #ffffff;
+  border-radius: 6px;
+  padding: 40px 10px 40px 10px;
 }
 
 .clock-time {
-  font-family: "JetBrains Mono Nerd Font", monospace;
+  font-family: "Cartograph CF";
   font-size: 48px;
   font-weight: bold;
   color: $on-surface;
 }
 
 .clock-separator {
-  font-family: "JetBrains Mono Nerd Font", monospace;
+  font-family: "Cartograph CF";
   font-size: 40px;
   font-weight: bold;
   color: $primary;
@@ -252,7 +257,7 @@
 }
 
 .clock-date {
-  font-family: "JetBrains Mono Nerd Font", sans-serif;
+  font-family: "Cartograph CF";
   font-size: 14px;
   font-weight: 500;
   color: $on-surface-variant;
@@ -263,15 +268,17 @@
    ======================================== */
 
 .apps-box {
-  background-color: transparentize($surface-container-low, 0.2);
-  border: 1px solid $outline-variant;
-  border-radius: 10px;
+  // background-color: transparentize($surface-container-low, 0.2);
+  background-color: transparent;
+  border: 0px solid #ffffff;
+  border-radius: 6px;
   padding: 5px;
 }
 
 .app-button {
-  background-color: $surface-container;
-  border: 1px solid $outline-variant;
+  // background-color: $surface-container;
+  background-color: transparent;
+  border: 0px solid $outline-variant;
   border-radius: 8px;
   padding: 5px;
 }
@@ -322,10 +329,11 @@
    ======================================== */
 
 .media-widget-container {
-  background-color: transparentize($surface-container-low, 0.2);
+  // background-color: transparentize($surface-container-low, 0.2);
+  background-color: transparent;
   padding: 10px;
-  border: 1px solid $outline-variant;
-  border-radius: 10px;
+  border: 0px solid #ffffff;
+  border-radius: 6px;
   min-height: 180px;
 }
 
@@ -333,7 +341,7 @@
   min-width: 80px;
   min-height: 80px;
   background-color: transparent;
-  border-radius: 10px;
+  border-radius: 7px;
 }
 
 .media-widget-info {
@@ -373,9 +381,10 @@
    CAVA
    ======================================== */
 .cava-container {
-  background-color: transparentize($surface-container-low, 0.2);
-  border: 1px solid $outline-variant;
-  border-radius: 10px;
+  // background-color: transparentize($surface-container-low, 0.2);
+  background-color: transparent;
+  border: 0px solid #ffffff;
+  border-radius: 6px;
   min-height: 41px;
   padding: 0px 10px;
 }
@@ -384,7 +393,7 @@
   font-size: 28px;
   padding: 0px;
   color: $tertiary;
-  font-family: monospace;
+  font-family: "Cartograph CF";
   margin-bottom: 0px;
 }
 
@@ -392,9 +401,10 @@
    NOTES BOX
    ======================================== */
 .note-container {
-  background-color: transparentize($surface-container-low, 0.2);
-  border: 1px solid $outline-variant;
-  border-radius: 10px;
+  // background-color: transparentize($surface-container-low, 0.2);
+  background-color: transparent;
+  border: 0px solid #ffffff;
+  border-radius: 6px;
   min-height: 66px;
   min-width: 175px;
 }
@@ -417,14 +427,14 @@
 
 .laptop-container {
   background: transparentize($surface-container-low, 0.2);
-  border-radius: 10px;
+  border-radius: 7px;
   padding: 5px 10px 10px 5px;
-  border: 1px solid $outline-variant;
+  border: 0px solid $outline-variant;
 }
 
 .logo-section {
   padding: 0px;
-  border-radius: 10px;
+  border-radius: 7px;
   padding: 0px 30px 0px 30px;
 }
 

@@ -3,7 +3,7 @@
 /* Kontainer utama di dalam jendela */
 .cal-box {
   padding: 10px;
-  font-family: "JetBrainsMono Nerd Font", "Noto Sans", sans-serif;
+  font-family: "Cartograph CF";
   background-color: $surface;
   border-radius: 0 0 10px 10px;
   border: 1.5px solid $outline;
@@ -92,7 +92,7 @@ calendar:selected {
   color: $on-primary-container;
   font-weight: bold;
   border: 2px solid $primary;
-  border-radius: 10px;
+  border-radius: 4px;
 }
 
 /* Alternatif dengan lebih spesifik */

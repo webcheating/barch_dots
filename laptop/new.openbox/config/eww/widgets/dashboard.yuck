@@ -151,7 +151,7 @@
       ;; Akses via profile.wm
       (box :class "info-row"
            :orientation "h" :space-evenly false :spacing 6
-        (label :class "info-icon" :text "")
+        (label :class "info-icon" :text " ")
         (label :class "info-text" :text {profile.wm} :xalign 0))
       
       ;; Uptime
@@ -159,7 +159,7 @@
       (box :class "info-row"
            :orientation "h" :space-evenly false :spacing 6
         (label :class "info-icon" :text "")
-        (label :class "info-text" :limit-width 13 :text {profile.uptime} :xalign 0)))))
+        (label :class "info-text" :limit-width 16 :text {profile.uptime} :xalign 0)))))
 
 ;; Weather Widget
 (defwidget weather_widget []
